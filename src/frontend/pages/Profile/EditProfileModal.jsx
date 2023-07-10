@@ -7,6 +7,7 @@ import { AiOutlineLink } from "react-icons/ai"
 import { BiCamera } from "react-icons/bi"
 import { BiUserCircle } from "react-icons/bi"
 import { AvatarUpdate } from "src/frontend/pages/Profile/AvatarUpdate";
+import { toast } from "react-hot-toast";
 
 export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }) => {
     const { editProfileHandler, userState: { user }, setShowModal, setLoading, setBannerLoader } = useContext(UserContext);
@@ -111,6 +112,7 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
                 },
                 userToken
             );
+            toast.success("Profile Updated Successfully")
 
             setShowModal(false);
         } catch (error) {
