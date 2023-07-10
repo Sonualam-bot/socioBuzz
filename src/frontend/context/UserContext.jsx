@@ -186,6 +186,9 @@ export const UserContextProvider = ({ children }) => {
 
     }, [userState?.user])
 
+    useEffect(() => {
+        userProfileHandler(userState?.getUser?._id)
+    }, [userState?.user])
 
 
     // here we are setting the loggedin user data inside the user object in the userReducer

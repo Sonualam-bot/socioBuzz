@@ -18,13 +18,16 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import { GoBookmarkSlashFill } from "react-icons/go"
 import { Post } from "src/frontend/pages/post/Post"
 import { Search } from "src/frontend/pages/search/Search"
+import { PostLoader } from "src/frontend/component/postLoader/PostLoader"
+import { SearchUser } from "src/frontend/component/SearchUser"
+
 
 
 export const Home = () => {
     const { homeFeed,
-        handleSortByDate, sortBy, dispatch } = useContext(PostContext)
+        handleSortByDate, sortBy, dispatch, isPosting } = useContext(PostContext)
 
-    const { unfollowHandler, userState: { user }, comment, handleCommentInput, postCommentHandler, getCommentHandler } = useContext(UserContext)
+    const { unfollowHandler, userState: { user }, comment, handleCommentInput, postCommentHandler, getCommentHandler, showSearchModal } = useContext(UserContext)
 
     const getAvatarUrl = (username) => {
         const following = user?.following?.find((userFollowing) => userFollowing?.username === username)
@@ -58,6 +61,13 @@ export const Home = () => {
                         <Search />
                     </div>
 
+                    <div className="showSearchedUsers" >
+                        {showSearchModal && (
+                            <SearchUser />
+                        )}
+                    </div>
+
+
                 </div>
                 <CreatePost />
 
@@ -79,26 +89,31 @@ export const Home = () => {
                     </button>
                 </div>
 
-                {sortedPost?.map(post => {
-                    const { username } = post;
+                {!isPosting ? <div>
 
-                    const isCurrentUser = username === user?.username;
-                    const isUserFollowed = isFollowingUser(username);
-                    const avatarUrl = getAvatarUrl(username);
+                    {sortedPost?.map(post => {
+                        const { username } = post;
+
+                        const isCurrentUser = username === user?.username;
+                        const isUserFollowed = isFollowingUser(username);
+                        const avatarUrl = getAvatarUrl(username);
 
 
 
-                    if (isCurrentUser || isUserFollowed) {
-                        return (
-                            <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} />
+                        if (isCurrentUser || isUserFollowed) {
+                            return (
 
-                        )
-                    } else {
-                        return null
+                                <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} />
+
+                            )
+                        } else {
+                            return null
+                        }
                     }
-                }
-                )}
+                    )}
 
+                </div> : <div> <PostLoader /> </div>
+                }
             </section>
             {/* </div> */}
 

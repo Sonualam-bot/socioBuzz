@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom"
 import { Header } from "src/frontend/component/Header"
-import "./Form.css"
+import "./Login.css"
 import { useContext } from "react"
 import { AuthContext } from "src/frontend/context/AuthContext"
+import { Toaster } from "react-hot-toast"
 
 
 export const Login = () => {
-    const { loginHandler, loginInput, setLoginInput } = useContext(AuthContext)
+    const { loginHandler, loginInput, setLoginInput, isLoggedIn } = useContext(AuthContext)
 
     const guestLogin = () => {
         setLoginInput({
@@ -25,29 +26,40 @@ export const Login = () => {
     return (
         <>
 
-            <div className="loginCard" >
+            <Toaster
+                position="bottom-right"
+                reverseOrder={false}
+                containerStyle={{
+                    bottom: "3rem",
+                    right: "3rem",
+                }}
+                toastOptions={{
+                    duration: 3000,
+                }}
+            />
 
-                <img src="https://www.antivirusguide.com/img/antivirus/guide/social_media_safety_w960.webp" alt="loginpng" />
 
-                <form className="login-form" onSubmit={loginHandler} >
-                    <div className="login-card">
-                        <label htmlFor="username">UserName</label>
-                        <input type="text" name="username" value={loginInput.username} placeholder="Enter Email" onChange={handleLoginInput} />
-
-                        <label htmlFor="password" >Password</label>
-                        <input type="password" name="password" value={loginInput.password} placeholder="Enter Password here" onChange={handleLoginInput} />
-
-                        <button type="submit" >Log In</button>
-                        <button onClick={guestLogin} >Login As A Guest</button>
-                        <p>Don't  have an account? <NavLink to="/signup">Sign up</NavLink>  </p>
-
+            <div className="login" >
+                <div className="card" >
+                    <div className="left" >
+                        <h1>Socio Wave</h1>
+                        <p>
+                            Connecting minds, shaping conversations, and embracing the power of brevity. Welcome to our vibrant social sphere!
+                        </p>
+                        <span>Don't have an account?</span>
+                        <NavLink className="NavLink" to="/signup">Signup</NavLink>
                     </div>
-
-                </form>
-
+                    <div className="right" >
+                        <h1>Login</h1>
+                        <form onSubmit={loginHandler}>
+                            <input type="text" name="username" value={loginInput.username} placeholder="Username" onChange={handleLoginInput} />
+                            <input type="password" name="password" value={loginInput.password} placeholder="Password" onChange={handleLoginInput} />
+                            <button type="submit" >Login</button>
+                            <button onClick={guestLogin} >Guest Login</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-
 
 
         </>

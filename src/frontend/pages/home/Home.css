@@ -88,6 +88,13 @@
   overflow: scroll;
 }
 
+.showSearchedUsers {
+  position: absolute;
+  z-index: 9999;
+  right: 30%;
+  top: 20%;
+}
+
 /* media queries */
 
 @media screen and (min-width: 768px) and (max-width: 940px) {

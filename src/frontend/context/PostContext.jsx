@@ -25,6 +25,7 @@ export const PostContextProvider = ({ children }) => {
 
     const [show, setShow] = useState(false)
 
+    const [isPosting, setIsPosting] = useState(false)
 
 
 
@@ -165,6 +166,8 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
+
+            setIsPosting(false)
         } catch (e) {
             console.log(e)
         }
@@ -315,6 +318,8 @@ export const PostContextProvider = ({ children }) => {
         allBookMarks,
         show,
         setShow,
+        isPosting,
+        setIsPosting
 
     }
 

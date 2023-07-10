@@ -137,7 +137,10 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
                             <p>{content}</p>
                         </div>
                     </div>
-                    <img src={contentUrl} alt="" />
+                    <div className="postImageContainer">
+                        <img src={contentUrl} alt="" />
+                    </div>
+
 
                     <div className="post_footer" >
                         <span>

@@ -13,7 +13,7 @@ import toast from "react-hot-toast"
 
 export const CreatePost = () => {
 
-    const { createPostHanlder, input, handleInput, setInput, setShow, updatedPost } = useContext(PostContext)
+    const { createPostHanlder, input, handleInput, setInput, setShow, updatedPost, setIsPosting } = useContext(PostContext)
     const { userToken } = useContext(AuthContext)
     const { userState: { user } } = useContext(UserContext)
 
@@ -22,12 +22,15 @@ export const CreatePost = () => {
     // const [inputStr, setInputStr] = useState('');
     const [showPicker, setShowPicker] = useState(false);
 
-    const [image1, setImage1] = useState({ contentUrl: "" });
+    const [image1, setImage1] = useState();
 
     const CLOUDINARY_UPLOAD_PRESET = 'avatarimages';
     const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/djdmyvtm8/image/upload";
 
     const uploadImageFilePost = () => {
+
+        setIsPosting(true)
+
         const file = image1;
         const formData = new FormData();
 
@@ -35,6 +38,7 @@ export const CreatePost = () => {
         formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
         formData.append("folder", "avatarimages");
 
+        setImage1(null)
         fetch(CLOUDINARY_URL, {
             method: "POST",
             body: formData,
@@ -52,19 +56,36 @@ export const CreatePost = () => {
 
     // have to be checked
     const handleUpdateBtnClickPost = () => {
-        if (input?.content === "") {
-            toast.error("write something or add image")
-        } else if (image1) {
+        const trimmedContent = input?.content.trim();
+        if (image1) {
             uploadImageFilePost()
         }
+
+        else if (trimmedContent === "") {
+            toast.error("Write caption or add image.");
+        }
         else {
-            createPostHanlder(input, userToken)
+            createPostHanlder({ ...input, content: trimmedContent }, userToken)
 
         }
         setInput({ content: "" })
         setPostImgPreview(null);
         setShow(false)
+
     }
+
+
+    // const postButtonClickHandler = () => {
+    //     setIsCreatePostModalOpen(false);
+    //     const trimmedContent = createPost?.content.trim();
+    //     if (imageInput) {
+    //         uploadPostImageFile();
+    //     } else if (trimmedContent === "") {
+    //         toast.error("Write caption or add image.");
+    //     } else {
+    //         createPostHandler({ ...createPost, content: trimmedContent }, userToken);
+    //     }
+    // };
 
 
     const handleEmojiClick = (emojiObject, event) => {

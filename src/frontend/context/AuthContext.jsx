@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast"
 
 export const AuthContext = createContext();
 
@@ -23,7 +23,7 @@ export const AuthContextProvider = ({ children }) => {
         password: ""
     })
 
-    // const [loginLoader, setLoginLoader] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const navigate = useNavigate();
 
@@ -35,16 +35,16 @@ export const AuthContextProvider = ({ children }) => {
         try {
             const response = await axios.post(`/api/auth/signup`, signupInput)
 
-            localStorage.setItem("token", response.data.encodedToken)
+            // localStorage.setItem("token", response.data.encodedToken)
             localStorage.setItem("userName", JSON.stringify(signupInput.username))
             localStorage.setItem("user", JSON.stringify(response.data.createdUser))
             toast.success("You have successfully signed up")
+            navigate("/login")
             setLoginInput({
                 username: signupInput.username,
                 password: signupInput.password
             })
-            loginHandler()
-            navigate("/")
+
         } catch (e) {
             console.log(e)
         }
@@ -57,37 +57,44 @@ export const AuthContextProvider = ({ children }) => {
 
     const handleCreateAccount = (e) => {
         e.preventDefault();
-        if (signupInput.firstName.trim() === "" || signupInput.lastName.trim() === "" || signupInput.username.trim() === "" || signupInput.password.trim() === "" || signupInput.confirmPassword.trim() === "") {
-            toast.error("Fill In the details properly")
+        if (!signupInput || !signupInput.firstName || !signupInput.lastName || !signupInput.username || !signupInput.password || !signupInput.confirmPassword) {
+            toast.error("Fill in the details properly");
         } else if (signupInput.password !== signupInput.confirmPassword) {
-            setPasswordMatch(false)
-            toast.error("Passwords Do Not Match")
+            // setPasswordMatch(false);
+            toast.error("Passwords do not match");
         } else {
-            setPasswordMatch(true)
+            // setPasswordMatch(true);
             signupHandler(e);
-            // setLoginLoader(false)
+            toast.success("Account created Successfully")
         }
-    }
+    };
+
 
     const loginHandler = async (e) => {
         e.preventDefault()
 
         try {
+            setIsLoggedIn(true);
             const response = await axios.post(`/api/auth/login`, loginInput)
 
-            localStorage.setItem("token", JSON.stringify(response.data.encodedToken))
             localStorage.setItem("user", JSON.stringify(response.data.foundUser))
-            navigate("/")
+            setTimeout(() => {
+                localStorage.setItem("token", JSON.stringify(response.data.encodedToken));
+                localStorage.setItem("userName", JSON.stringify(loginInput?.username))
+                navigate("/");
+            }, 1500);
 
-            localStorage.setItem("userName", JSON.stringify(loginInput?.username))
             setLoginInput({
                 username: "",
                 password: ""
             })
+            toast.success("Logged in Successfully")
+            setIsLoggedIn(false);
 
-            toast.success("Log in Successfull")
+
         } catch (e) {
-            console.log(e)
+            console.log("Error", e);
+            toast.error("Something went wrong")
         }
     }
 
@@ -116,7 +123,8 @@ export const AuthContextProvider = ({ children }) => {
         logoutHandler,
         passwordMatch,
         userToken,
-        setLoginInput
+        setLoginInput,
+        isLoggedIn
 
 
     }

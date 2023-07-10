@@ -11,7 +11,6 @@ import { Search } from "src/frontend/pages/search/Search"
 import { SearchUser } from "src/frontend/component/SearchUser"
 
 export const Suggestion = () => {
-    const { handleSortByDate, searchByUserName } = useContext(PostContext)
     const { showSearchModal } = useContext(UserContext)
 
 
@@ -26,7 +25,6 @@ export const Suggestion = () => {
                 {showSearchModal && (
                     <SearchUser />
                 )}
-
 
 
                 <Users />

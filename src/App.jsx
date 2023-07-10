@@ -10,13 +10,12 @@ import { Login } from "./frontend/pages/login/Login"
 import { Signup } from "src/frontend/pages/login/Signup"
 
 
-import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { Logout } from "src/frontend/pages/login/Logout"
 import { SinglePost } from "src/frontend/pages/singlePost/SinglePost"
 
 
-import MockMan from 'mockman-js'
+
 import MockAPI from "src/Mockman/MockApi"
 import { Header } from "src/frontend/component/Header"
 import { useContext } from "react"
@@ -30,10 +29,6 @@ import { PostContext } from "src/frontend/context/PostContext"
 import { CreatePost } from "src/frontend/pages/createpost/CreatePost"
 import { Toaster } from "react-hot-toast"
 
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
-// import { faStar } from "@fortawesome/free-regular-svg-icons"
-// import { faHouse } from "@fortawesome/free-regular-svg-icons"
 
 if (import.meta.env.DEV) {
   window.onerror = (event, source, lineno, colno, err) => {
@@ -49,7 +44,7 @@ if (import.meta.env.DEV) {
 
 
 function App() {
-  const { userToken } = useContext(AuthContext)
+  const { userToken, isLoggedIn } = useContext(AuthContext)
   const { show, setShow } = useContext(PostContext)
   const location = useLocation();
 
@@ -66,15 +61,22 @@ function App() {
 
   return (
     <>
-      <Toaster
-        position="top-center"
-        duration="3000"
+
+
+
+
+      {!isLoggedIn && <Toaster
+        position="bottom-right"
         reverseOrder={false}
         containerStyle={{
           bottom: "3rem",
           right: "3rem",
         }}
-      />
+        toastOptions={{
+          duration: 2000,
+        }}
+      />}
+
 
       {show &&
         <div>

@@ -53,19 +53,6 @@
   color: var(--vacay-color);
 }
 
-/* .sidebar_tweet {
-  width: 100%;
-  background-color: var(--vacay-color);
-  color: var(--vacay-background);
-  border: none;
-  font-weight: 900;
-  border-radius: 30px;
-  height: 50px;
-  margin-top: 20px;
-  font-size: 1.1rem;
-  cursor: pointer;
-} */
-
 .loggedUser_details {
   display: flex;
   align-items: center;
@@ -125,7 +112,6 @@
 
   .sidebarOptions.hide-text {
     display: flex;
-    gap: 1.1rem;
     text-decoration: none;
     color: var(--vacay-black);
     padding: 0.5rem 1rem;
@@ -141,11 +127,6 @@
   .loggedUser_details {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    /* gap: 0.5rem;
-    width: 100%; */
-    /* margin-bottom: 0.7rem;
-    padding: 0.5rem; */
     border-radius: 30px;
     font-weight: 600;
   }
@@ -165,7 +146,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 1rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -183,9 +164,32 @@
     width: 100%;
   }
 
+  .sidebarOptions.hide-text {
+    display: flex;
+    text-decoration: none;
+    color: var(--vacay-black);
+    padding: 0.5rem 0rem;
+    margin: 0.5rem 0;
+    border: none;
+    outline: none;
+  }
+
+  .sidebarOptions {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    text-decoration: none;
+    color: var(--vacay-black);
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+    border: none;
+    outline: none;
+  }
+
   .sidebar button {
     background-color: var(--vacay-background);
-    /* border-radius: 30px; */
   }
 
   .loggedUser_details {
