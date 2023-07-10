@@ -1,0 +1,14 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inputContainer {
+  margin: 2rem auto;
+  text-align: center;
+  height: 50px;
+  border: 1px solid grey;
+  width: 50vw;
+  padding: 1rem;
+}

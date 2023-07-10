@@ -1,0 +1,8 @@
+.navlink-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  background-color: grey;
+  padding: 1rem;
+}

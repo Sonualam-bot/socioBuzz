@@ -1,0 +1,23 @@
+.login-card,
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 2rem auto;
+  gap: 0.5rem;
+  font-size: 1rem;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  line-height: 1rem;
+}
+
+.login-card input,
+.signup-card input {
+  height: 1.5rem;
+  padding: 0.2rem;
+}
+
+.login-card button,
+.signup-card button {
+  height: 1.7rem;
+}
