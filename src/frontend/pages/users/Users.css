@@ -1,5 +1,63 @@
-.users_list {
+.user_suggestion_heading h2 {
+  font-size: 1.3rem;
+  margin: 1rem 0 0 0;
+  color: var(--primary);
+}
+
+.suggestion_to_follow {
+  margin: 0.5rem auto;
+}
+
+.user_suggestion_container {
   display: flex;
-  justify-content: space-around;
-  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0.7rem auto;
+}
+
+.user_suggestion_cred {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.user_suggestion_cred img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.suggestion_view_link {
+  text-decoration: none;
+}
+
+.user_suggestion_name p:nth-child(1) {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--vacay-black);
+}
+
+.user_suggestion_name p:nth-child(2) {
+  font-size: 15px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.user_follow_button button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+.user_follow_button button:hover {
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
+  background-color: var(--vacay-color);
+  color: #fff;
 }

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { createContext, useContext, useEffect, useReducer } from "react"
+import { createContext, useState, useEffect, useReducer, useContext } from "react"
 import { useNavigate } from "react-router"
 import { AuthContext } from "src/frontend/context/AuthContext"
 import { postreducer, initialData } from "src/reducer/postreducer"
@@ -12,6 +12,21 @@ export const PostContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(postreducer, initialData)
     const navigate = useNavigate()
+
+    const [input, setInput] = useState({
+        content: "",
+        contentUrl: "",
+    })
+
+    const [updatedPost, setUpdatedPost] = useState({ content: "", contentUrl: "" })
+    const [showEditdialog, setShowEditDialog] = useState(false)
+    const [editPostId, setEditPostId] = useState()
+    const { userToken } = useContext(AuthContext)
+
+    const [show, setShow] = useState(false)
+
+
+
 
 
     const getAllPosts = async () => {
@@ -42,6 +57,25 @@ export const PostContextProvider = ({ children }) => {
                     bookmarks: response.data.bookmarks
                 }
             })
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    const allBookMarks = async (token) => {
+        try {
+            const response = await axios.get(`/api/users/bookmark/`, {
+                headers: {
+                    authorization: token
+                }
+            })
+            dispatch({
+                type: "ADD_TO_BOOKMARK",
+                payload: {
+                    bookmarks: response.data.bookmarks
+                }
+            })
+            console.log("bookmarrks", response.data.bookmarks)
         } catch (e) {
             console.log(e)
         }
@@ -79,6 +113,7 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
+            console.log("likes", response.data.posts)
         } catch (e) {
             console.log(e)
         }
@@ -106,6 +141,12 @@ export const PostContextProvider = ({ children }) => {
 
     }
 
+    const handleInput = (e) => {
+        const { name, value } = e.target
+        console.log({ ...input, [name]: value })
+        setInput({ ...input, [name]: value })
+    }
+
     const createPostHanlder = async (post, token) => {
         try {
             const response = await axios.post(`/api/posts/`, {
@@ -116,7 +157,7 @@ export const PostContextProvider = ({ children }) => {
                 }
             })
 
-            console.log("createdPost", response.data)
+            setInput({ content: "" })
 
             dispatch({
                 type: "CREATE_POST",
@@ -180,10 +221,10 @@ export const PostContextProvider = ({ children }) => {
         }
     }
 
-    const editUserPost = async (postId, postData, token) => {
+    const editUserPost = async (postId, updatedPost, token) => {
         try {
             const response = await axios.post(`/api/posts/edit/${postId}`, {
-                postData
+                postData: updatedPost
             }, {
                 headers: {
                     authorization: token
@@ -197,15 +238,47 @@ export const PostContextProvider = ({ children }) => {
                 }
             })
 
+            setShowEditDialog(false)
+            setEditPostId(null)
+
         } catch (e) {
             console.log(e)
         }
     }
 
+    const editButtonHandler = (_id, updatedPost) => {
+        setUpdatedPost({ ...updatedPost })
+        setShowEditDialog(true)
+        setEditPostId(_id)
+    }
+
+    // const handleSortByDate = (e) => {
+    //     const sortBy = e.target.value;
+    //     if (sortBy === "date") {
+    //         const sortedPost = state.posts.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+    //         dispatch({
+    //             type: "LATEST_POSTS",
+    //             payload: {
+    //                 sortedPost: sortedPost
+    //             }
+    //         })
+    //     } else {
+    //         const sortedPost = state.posts.sort((a, b) => b.likes.likeCount - a.likes.likeCount)
+
+    //         dispatch({
+    //             type: "LATEST_POSTS",
+    //             payload: {
+    //                 sortedPost: sortedPost
+    //             }
+    //         })
+    //     }
+    // }
+
 
 
     useEffect(() => {
         getAllPosts()
+
     }, [])
 
     const value = {
@@ -213,20 +286,36 @@ export const PostContextProvider = ({ children }) => {
         bookmarks: state.bookmarks,
         users: state.users,
         userFollows: state.userFollows,
-        followings: state.followings,
+        sortBy: state.sortBy,
         content: state.content,
         singlePost: state.singlePost,
         userByUsername: state.searchByUsername,
+        individualUserData: state.individualUserData,
+        loggedInUser: state.loggedInUser,
         dispatch,
         addPostToBookmark,
         addPostToUserLikes,
         removePostFromBookmark,
         removePostFromUserLikes,
         createPostHanlder,
+        input,
+        setInput,
+        handleInput,
         singlePostById,
         searchByUserName,
         deleteUserPost,
-        editUserPost
+        editUserPost,
+        updatedPost,
+        setUpdatedPost,
+        showEditdialog,
+        setShowEditDialog,
+        editPostId,
+        setEditPostId,
+        editButtonHandler,
+        allBookMarks,
+        show,
+        setShow,
+
     }
 
 

@@ -10,7 +10,7 @@ export const Signup = () => {
 
     return (
         <>
-            <Header />
+
             <form onSubmit={signupHandler} >
                 <div className="signup-card" >
 

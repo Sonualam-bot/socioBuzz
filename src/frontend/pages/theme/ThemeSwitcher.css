@@ -1,0 +1,9 @@
+.dark {
+  background-color: var(--vacay-black);
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: var(--vacay-black);
+}

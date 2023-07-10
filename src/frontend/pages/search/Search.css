@@ -1,0 +1,20 @@
+.suggestion_input {
+  display: flex;
+  align-items: center;
+  background-color: var(--vacay-background);
+  padding: 5px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.suggestion_input svg {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.suggestion_input input {
+  border: none;
+  background-color: var(--vacay-background);
+  outline: none;
+  font-size: 1rem;
+}

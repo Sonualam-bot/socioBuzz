@@ -1,11 +1,19 @@
 import { useContext } from "react"
 import { AuthContext } from "src/frontend/context/AuthContext"
+import { UserContext } from "src/frontend/context/UserContext"
+import { BiMessageAlt } from "react-icons/bi"
 
 export const Logout = () => {
     const { logoutHandler } = useContext(AuthContext)
+    const { userState: { user } } = useContext(UserContext)
     return (
         <>
-            <button onClick={logoutHandler} >Log Out</button>
+            <div className="user_logout_card">
+                <button onClick={logoutHandler}>Log out @{user?.username}</button>
+                <div></div>
+            </div>
+
+            {/* <button onClick={logoutHandler}>Log Out @{user?.username} </button> */}
         </>
     )
 }

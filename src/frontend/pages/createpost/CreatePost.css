@@ -1,0 +1,143 @@
+.inputBox {
+  padding-bottom: 10px;
+  border-bottom: 10px solid var(--vacay-background);
+  padding-right: 10px;
+  position: relative;
+}
+
+.inputBox .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputContainer {
+  display: flex;
+  padding: 20px;
+  padding-bottom: 0;
+  gap: 0.5rem;
+  /* border-bottom: 1px solid var(--vacay-background); */
+}
+
+.inputContainer .input_user_avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+/* 
+.inputContainer input {
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+} */
+
+.post_button {
+  background-color: var(--vacay-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  /* margin-top: 20px; */
+  /* margin-left: auto; */
+}
+
+.upload_postImg {
+  /* position: absolute; */
+  bottom: 0;
+  left: 0;
+  margin-bottom: 10px;
+}
+
+.image_upload_alias > .upload_postImg {
+  display: none;
+}
+
+.image_upload_alias svg {
+  /* position: absolute; */
+  bottom: 0;
+  left: 4.4rem;
+  margin: 0 0 1.2rem 1.5rem;
+  font-size: 1.2rem;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.post_emoji svg {
+  /* position: absolute; */
+  bottom: 0;
+  left: 5.9rem;
+  margin: 0 0 1.2rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.postImagePreview {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 1.4rem;
+  border-radius: 5px;
+}
+
+.input_user_posts {
+  width: 100%;
+}
+
+.post_input > textarea {
+  width: 100%;
+  resize: none;
+  height: 50px;
+  border: none;
+  outline: none;
+  margin-top: 0;
+  color: inherit;
+  background-color: inherit;
+}
+
+.postPreviewDiv {
+  width: 100%;
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.postPreviewDiv svg {
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  cursor: pointer;
+  background-color: var(--vacay-background);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.createPost_interactions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+  border-top: 1px solid var(--vacay-background);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.createPost_icons {
+  display: flex;
+}
+
+.post_emoji {
+  position: inherit;
+}
+
+.emojiPicker {
+  z-index: 999;
+  position: absolute;
+}

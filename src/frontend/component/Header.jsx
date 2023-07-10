@@ -10,16 +10,12 @@ export const Header = () => {
         <>
             <div className="navlink-container" >
                 <h3> SocioBuzz </h3>
-                <div>
+                <div className="navbar_input" >
                     <input type="text" placeholder="search" onChange={(e) => searchByUserName(e.target.value)} />
+                </div>
+                <div>
                     <NavLink to="/" > Home </NavLink>
-                    <NavLink to="/explore" > Explore </NavLink>
-                    <NavLink to="/bookmarks" > Bookmarks </NavLink>
-                    <NavLink to="/profile" > Profile </NavLink>
-
-                    {!userToken ? <NavLink to="/login" >Login</NavLink> : <NavLink to="/logout" >Logout</NavLink>}
-
-
+                    {/* <NavLink to="/profile" > Profile </NavLink> */}
                 </div>
             </div>
         </>

@@ -12,26 +12,15 @@ export const users = [
     lastName: "Balika",
     username: "adarshbalika",
     password: "adarshBalika123",
+    bio: "Full Stack Developer",
     bookmarks: [],
     posts: [],
     avatarUrl: "https://wizarddojo.files.wordpress.com/2015/03/cinderella1.jpg",
+    bannerUrl: "https://quotefancy.com/media/wallpaper/3840x2160/18846-Anonymous-Quote-Work-hard-in-silence-let-your-success-be-your.jpg",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
-  // {
-  //   _id: "2",createdAt: formatDate(),
-  //   firstName: "Adarsh",
-  //   lastName: "Balika",
-  //   username: "adarshbalika",
-  //   password: "adarshBalika123",
-  //   bio: "Be yourself!",
-  //   bookmarks: [],
-  //   avatarUrl:
-  //     "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651473734/socialmedia/avatars/adarsh-balika_dct6gm.webp",
-  //   website: "https://romabulani.netlify.app/",
-  //   createdAt: "2022-01-01T10:55:06+05:30",
-  //   updatedAt: formatDate(),
-  // },
   {
     _id: "1",
     firstName: "John",
@@ -43,7 +32,9 @@ export const users = [
     posts: [],
     avatarUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651554207/socialmedia/avatars/john-doe_gbkuda.webp",
-    website: "https://google.com/",
+    bannerUrl:
+      "https://hips.hearstapps.com/hmg-prod/images/smile-quotes-1518106970.jpg?crop=1xw:0.8018531717747683xh;center,top&resize=1200:*",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -58,7 +49,8 @@ export const users = [
     posts: [],
     avatarUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651554256/socialmedia/avatars/jane-doe_il3cvx.webp",
-    website: "https://romabulani.netlify.app/",
+    bannerUrl: "https://hips.hearstapps.com/hmg-prod/images/home-quotes-v2-1659710227.jpg",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -73,27 +65,11 @@ export const users = [
     posts: [],
     avatarUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1651563581/socialmedia/avatars/carl-smith_mehw0u.webp",
-    website: "https://romabulani.netlify.app/",
+    bannerUrl: "https://www.goalcast.com/wp-content/uploads/2021/01/Rapper-Quotes-1.jpg",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
-
-  {
-    _id: uuid(),
-    firstName: "Roma",
-    lastName: "Bulani",
-    username: "romabulani",
-    password: "romabulani123",
-    bio: "Aspiring Frontend Engineer",
-    bookmarks: [],
-    posts: [],
-    avatarUrl:
-      "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525370/socialmedia/avatars/roma.webp",
-    website: "https://romabulani.hashnode.dev/",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
-  },
-
   {
     _id: uuid(),
     firstName: "Alex",
@@ -105,7 +81,8 @@ export const users = [
     posts: [],
     avatarUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525373/socialmedia/avatars/alex-maxwell.webp",
-    website: "",
+    bannerUrl: "https://www.myglobalviewpoint.com/wp-content/uploads/2018/03/Best-Travel-Quotes-to-Fuel-Your-Wanderlust.jpg",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
@@ -121,7 +98,8 @@ export const users = [
     posts: [],
     avatarUrl:
       "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652525510/socialmedia/avatars/sophia-jones.webp",
-    website: "",
+    bannerUrl: "https://www.myglobalviewpoint.com/wp-content/uploads/2018/03/Best-Travel-Quotes-to-Fuel-Your-Wanderlust.jpg",
+    website: "https://google.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
