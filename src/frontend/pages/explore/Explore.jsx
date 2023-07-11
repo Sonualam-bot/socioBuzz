@@ -43,23 +43,25 @@ export const Explore = () => {
                     </div>
 
                 </div>
-                {homeFeed?.map(post => {
-                    const { username } = post;
+                <div className="exploreSectionOverflow">
+                    {homeFeed?.map(post => {
+                        const { username } = post;
 
-                    const avatarUrl = getAvatarUrl(username)
-                    const isUserFollowed = isFollowingUser(username);
-                    const isCurrentUser = username === user?.username;
+                        const avatarUrl = getAvatarUrl(username)
+                        const isUserFollowed = isFollowingUser(username);
+                        const isCurrentUser = username === user?.username;
 
 
-                    return (
-                        username !== user?.username ?
-                            <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} explore />
+                        return (
+                            username !== user?.username ?
+                                <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} explore />
 
-                            : ""
-                    )
+                                : ""
+                        )
 
-                }
-                )}
+                    }
+                    )}
+                </div>
             </section>
         </>
     )

@@ -255,29 +255,6 @@ export const PostContextProvider = ({ children }) => {
         setEditPostId(_id)
     }
 
-    // const handleSortByDate = (e) => {
-    //     const sortBy = e.target.value;
-    //     if (sortBy === "date") {
-    //         const sortedPost = state.posts.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-    //         dispatch({
-    //             type: "LATEST_POSTS",
-    //             payload: {
-    //                 sortedPost: sortedPost
-    //             }
-    //         })
-    //     } else {
-    //         const sortedPost = state.posts.sort((a, b) => b.likes.likeCount - a.likes.likeCount)
-
-    //         dispatch({
-    //             type: "LATEST_POSTS",
-    //             payload: {
-    //                 sortedPost: sortedPost
-    //             }
-    //         })
-    //     }
-    // }
-
-
 
     useEffect(() => {
         getAllPosts()

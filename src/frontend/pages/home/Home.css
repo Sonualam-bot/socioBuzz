@@ -14,13 +14,17 @@
   flex: 0.5;
   /* border-right: 1px solid var(--vacay-background); */
   min-width: fit-content;
+}
+
+.homeSectionOverflow,
+.exploreSectionOverflow {
   overflow: scroll;
 }
 
 .feed_header {
   position: sticky;
   top: 0;
-  /* background-color: gainsboro; */
+  background-color: #bfdbfe;
   z-index: 100;
   border: 1px solid var(--vacay-background);
   padding: 15px 20px;

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Header } from "src/frontend/component/Header"
 import { PostContext } from "src/frontend/context/PostContext"
@@ -25,7 +25,7 @@ import { SearchUser } from "src/frontend/component/SearchUser"
 
 export const Home = () => {
     const { homeFeed,
-        handleSortByDate, sortBy, dispatch, isPosting } = useContext(PostContext)
+        handleSortByDate, sortBy, dispatch, isPosting, scrollDirection } = useContext(PostContext)
 
     const { unfollowHandler, userState: { user }, comment, handleCommentInput, postCommentHandler, getCommentHandler, showSearchModal } = useContext(UserContext)
 
@@ -44,6 +44,9 @@ export const Home = () => {
 
 
 
+
+
+
     return (
         <>
 
@@ -54,6 +57,8 @@ export const Home = () => {
 
 
             <section className="home_mid_section" >
+
+                {/* <div className={`header ${scrollDirection === "down" ? "hide" : "show"}`}> */}
 
                 <div className="feed_header">
                     <h2>Home</h2>
@@ -69,51 +74,58 @@ export const Home = () => {
 
 
                 </div>
-                <CreatePost />
 
-                <div className="home_rightSide_btns" >
-                    <button
-                        style={{ fontWeight: sortBy === "trending" ? "700" : "500" }}
-                        value="likes"
-                        onClick={() => dispatch({ type: "SORT_BY", payload: "trending" })}
-                    >
-                        Trending
-                    </button>
+                {/* </div> */}
+
+                <div className="homeSectionOverflow">
 
 
-                    <button
-                        style={{ fontWeight: sortBy === "latest" ? "700" : "500" }} value="date"
-                        onClick={() => dispatch({ type: "SORT_BY", payload: "latest" })}
-                    >
-                        Latest
-                    </button>
-                </div>
+                    <CreatePost />
 
-                {!isPosting ? <div>
-
-                    {sortedPost?.map(post => {
-                        const { username } = post;
-
-                        const isCurrentUser = username === user?.username;
-                        const isUserFollowed = isFollowingUser(username);
-                        const avatarUrl = getAvatarUrl(username);
+                    <div className="home_rightSide_btns" >
+                        <button
+                            style={{ fontWeight: sortBy === "trending" ? "700" : "500" }}
+                            value="likes"
+                            onClick={() => dispatch({ type: "SORT_BY", payload: "trending" })}
+                        >
+                            Trending
+                        </button>
 
 
+                        <button
+                            style={{ fontWeight: sortBy === "latest" ? "700" : "500" }} value="date"
+                            onClick={() => dispatch({ type: "SORT_BY", payload: "latest" })}
+                        >
+                            Latest
+                        </button>
+                    </div>
 
-                        if (isCurrentUser || isUserFollowed) {
-                            return (
+                    {!isPosting ? <div>
 
-                                <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} />
+                        {sortedPost?.map(post => {
+                            const { username } = post;
 
-                            )
-                        } else {
-                            return null
+                            const isCurrentUser = username === user?.username;
+                            const isUserFollowed = isFollowingUser(username);
+                            const avatarUrl = getAvatarUrl(username);
+
+
+
+                            if (isCurrentUser || isUserFollowed) {
+                                return (
+
+                                    <Post key={post?._id} post={post} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} avatarUrl={avatarUrl} />
+
+                                )
+                            } else {
+                                return null
+                            }
                         }
-                    }
-                    )}
+                        )}
 
-                </div> : <div> <PostLoader /> </div>
-                }
+                    </div> : <div> <PostLoader /> </div>
+                    }
+                </div>
             </section>
             {/* </div> */}
 

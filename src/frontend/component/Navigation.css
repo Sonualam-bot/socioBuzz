@@ -192,18 +192,18 @@
     background-color: var(--vacay-background);
   }
 
-  .loggedUser_details {
+  /* .loggedUser_details {
     display: flex;
     border-radius: 30px;
     font-weight: 600;
     margin-bottom: 0;
-  }
+  } */
 
   .loggedUser_header {
     display: none;
   }
 
-  .loggedUser_details svg {
+  .loggedUser_details {
     display: none;
   }
 }
