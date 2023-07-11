@@ -488,6 +488,12 @@
 
 /* media queries */
 @media screen and (max-width: 768px) {
+  .profile-container {
+    height: 120px;
+    /* background-color: var(--vacay-color); */
+    position: relative;
+  }
+
   .profile-container .profile_picture {
     width: 100px;
     height: 100px;

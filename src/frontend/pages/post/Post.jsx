@@ -93,22 +93,7 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
                                 <span>{formatDate(createdAt)} </span>
                             </div>
                             <div >
-                                {
-                                    isCurrentUser ?
-                                        <div className="editDeleteModal">
-                                            <HiOutlineDotsHorizontal onClick={() => { setShowEditAction(!showEditAction) }} />
-                                            {showEditAction && <EditDelete deleteUserPost={deleteUserPost} _id={_id} userToken={userToken} content={content} contentUrl={contentUrl} post={post} />}
-                                        </div>
-                                        :
-                                        <div  >
-                                            {isUserFollowed ? (
-                                                <button className="user_follow_unfollow_btns" onClick={() => unfollowHandler(userDetails?._id, userToken)}>Unfollow</button>
-                                            ) : (
-                                                <button className="user_follow_unfollow_btns" onClick={() => followHandler(userDetails?._id, userToken)}>Follow</button>
-                                            )}
-                                        </div>
 
-                                }
 
                                 <div>
                                     {showEditdialog &&
@@ -128,6 +113,24 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
 
                                     }
                                 </div>
+                                {
+                                    isCurrentUser ?
+                                        <div className="editDeleteModal">
+                                            <HiOutlineDotsHorizontal onClick={() => { setShowEditAction(!showEditAction) }} />
+                                            {showEditAction && <EditDelete deleteUserPost={deleteUserPost} _id={_id} userToken={userToken} content={content} contentUrl={contentUrl} post={post} />}
+                                        </div>
+                                        :
+                                        <div  >
+                                            {isUserFollowed ? (
+                                                <button className="user_follow_unfollow_btns" onClick={() => unfollowHandler(userDetails?._id, userToken)}>Unfollow</button>
+                                            ) : (
+                                                <button className="user_follow_unfollow_btns" onClick={() => followHandler(userDetails?._id, userToken)}>Follow</button>
+                                            )}
+                                        </div>
+
+                                }
+
+
 
 
 
@@ -144,7 +147,7 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
 
                     <div className="post_footer" >
                         <span>
-                            {bookmarks?.includes(_id) ? <GoBookmarkSlash onClick={() => removePostFromBookmark(_id, userToken)} /> : <GoBookmark onClick={() => addPostToBookmark(_id, userToken)} />}
+                            {bookmarks?.includes(_id) ? <span className="bookmarkAdded"><GoBookmarkSlash onClick={() => removePostFromBookmark(_id, userToken)} /></span> : <GoBookmark onClick={() => addPostToBookmark(_id, userToken)} />}
                         </span>
 
                         <span>
@@ -162,7 +165,7 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
 
                                     }}  >
 
-                                    {isPostLiked(likes, user) ? <AiFillHeart /> : <AiOutlineHeart />}
+                                    {isPostLiked(likes, user) ? <span className="likedHeart" ><AiFillHeart /></span> : <span><AiOutlineHeart /></span>}
                                 </span>
                             }{likes?.likeCount}
                         </span>

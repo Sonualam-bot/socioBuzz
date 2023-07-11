@@ -28,6 +28,7 @@ import { UserProfile } from "src/frontend/pages/userProfile/UserProfile"
 import { PostContext } from "src/frontend/context/PostContext"
 import { CreatePost } from "src/frontend/pages/createpost/CreatePost"
 import { Toaster } from "react-hot-toast"
+import { BottomNavigation } from "src/frontend/component/BottomNavigation"
 
 
 if (import.meta.env.DEV) {
@@ -107,6 +108,7 @@ function App() {
 
           <div className="navigation_container" >
             <NavigationLeft />
+
           </div>
 
 
@@ -141,9 +143,9 @@ function App() {
 
 
 
+        <BottomNavigation />
 
 
-        {/* <ToastContainer position="bottom-right" autoClose="500" closeOnClick="true" pauseOnHover="true" draggable="true" /> */}
 
       </div>
 

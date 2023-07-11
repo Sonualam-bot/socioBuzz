@@ -20,6 +20,7 @@ import { Post } from "src/frontend/pages/post/Post"
 import { Search } from "src/frontend/pages/search/Search"
 import { PostLoader } from "src/frontend/component/postLoader/PostLoader"
 import { SearchUser } from "src/frontend/component/SearchUser"
+import { BottomNavigation } from "src/frontend/component/BottomNavigation"
 
 
 
@@ -126,6 +127,7 @@ export const Home = () => {
                     </div> : <div> <PostLoader /> </div>
                     }
                 </div>
+
             </section>
             {/* </div> */}
 

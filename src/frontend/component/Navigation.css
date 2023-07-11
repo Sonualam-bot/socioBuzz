@@ -143,20 +143,9 @@
 /* media queries for screen size 568px */
 @media screen and (max-width: 567px) {
   .home_navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh;
-    padding: 5px;
-    z-index: 9999;
-    background-color: var(--vacay-background);
+    display: none;
   }
-
+  /* 
   .sidebar {
     display: flex;
     flex-direction: row;
@@ -190,20 +179,5 @@
 
   .sidebar button {
     background-color: var(--vacay-background);
-  }
-
-  /* .loggedUser_details {
-    display: flex;
-    border-radius: 30px;
-    font-weight: 600;
-    margin-bottom: 0;
   } */
-
-  .loggedUser_header {
-    display: none;
-  }
-
-  .loggedUser_details {
-    display: none;
-  }
 }

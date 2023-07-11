@@ -18,3 +18,17 @@
   outline: none;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 567px) {
+  .suggestion_input {
+    padding: 0px;
+  }
+
+  .suggestion_input svg {
+    display: none;
+  }
+
+  .suggestion_input input {
+    font-size: 0.75rem;
+  }
+}

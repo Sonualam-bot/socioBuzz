@@ -1,5 +1,6 @@
 import axios from "axios"
 import { createContext, useState, useEffect, useReducer, useContext } from "react"
+import { toast } from "react-hot-toast"
 import { useNavigate } from "react-router"
 import { AuthContext } from "src/frontend/context/AuthContext"
 import { postreducer, initialData } from "src/reducer/postreducer"
@@ -114,7 +115,7 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
-            console.log("likes", response.data.posts)
+
         } catch (e) {
             console.log(e)
         }

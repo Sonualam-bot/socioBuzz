@@ -11,6 +11,7 @@ import { BsFillImageFill } from 'react-icons/bs'
 
 import EmojiPicker from 'emoji-picker-react';
 import { BsEmojiSunglasses } from 'react-icons/bs'
+import { toast } from "react-hot-toast"
 
 export const EditPost = () => {
     const { updatedPost,
@@ -25,6 +26,7 @@ export const EditPost = () => {
 
     const [showPickerInEdit, setShowPickerInEdit] = useState(false);
 
+    const [edittedPost, setEdittedPost] = useState(false)
 
 
     // const handleUpdateUserPost = () => {
@@ -64,8 +66,13 @@ export const EditPost = () => {
     const handleUpdateUserPost = () => {
         if (chooseEditImage) {
             uploadImageFileEditPost()
+            // setEdittedPost(true)
+        } else if (updatedPost?.content.trim() === "") {
+            toast.error("write something or choose an image")
         } else {
             editUserPost(editPostId, updatedPost, userToken)
+            toast.success("Post Updated")
+            setEdittedPost(true)
 
         }
 

@@ -8,9 +8,9 @@ export const EditDelete = ({ post, deleteUserPost, handleEditButtonClick, _id, u
 
     return (
         <div className="edit_and_delete_show" >
+            <FiEdit onClick={() => editButtonHandler(_id, post)} />
             <BsTrash3 className="trash" onClick={() => deleteUserPost(_id, userToken)} />
 
-            <FiEdit onClick={() => editButtonHandler(_id, post)} />
 
         </div >
     )
