@@ -10,10 +10,9 @@ export const Logout = () => {
         <>
             <div className="user_logout_card">
                 <button onClick={logoutHandler}>Log out @{user?.username}</button>
-                <div></div>
+                {/* <div></div> */}
             </div>
 
-            {/* <button onClick={logoutHandler}>Log Out @{user?.username} </button> */}
         </>
     )
 }

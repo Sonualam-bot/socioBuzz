@@ -84,7 +84,7 @@ export const Home = () => {
                     <CreatePost />
 
                     <div className="home_rightSide_btns" >
-                        <button
+                        <button className="trendingLatestBtns"
                             style={{ fontWeight: sortBy === "trending" ? "700" : "500" }}
                             value="likes"
                             onClick={() => dispatch({ type: "SORT_BY", payload: "trending" })}
@@ -93,7 +93,7 @@ export const Home = () => {
                         </button>
 
 
-                        <button
+                        <button className="trendingLatestBtns"
                             style={{ fontWeight: sortBy === "latest" ? "700" : "500" }} value="date"
                             onClick={() => dispatch({ type: "SORT_BY", payload: "latest" })}
                         >

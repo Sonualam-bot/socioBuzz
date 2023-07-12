@@ -13,7 +13,8 @@
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
   padding: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 3rem;
+  background-color: var(--vacay-background);
 }
 
 .search-users-show img {
@@ -33,7 +34,7 @@
 
 .searched-users a {
   text-decoration: none;
-  color: var(--vacay-black);
+  /* color: var(--vacay-black); */
 }
 .searched-users a:hover {
   text-decoration: underline;

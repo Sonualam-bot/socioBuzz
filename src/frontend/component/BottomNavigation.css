@@ -15,10 +15,10 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 7.5vh;
-    padding: 5px;
+    height: 7.3vh;
+    padding: 0 5px;
     z-index: 9999;
-    background-color: var(--vacay-background);
+    border-top: 3px solid #fff;
   }
 
   .sidebar1 {
@@ -31,24 +31,24 @@
 
   .sidebarOptions1.hide-text1 span {
     display: none;
-    /* text-decoration: none;
-    color: var(--vacay-black);
-    padding: 0.5rem 0rem;
-    margin: 0.5rem 0;
-    border: none;
-    outline: none; */
   }
 
-  .sidebarOptions1.active1 {
+  .sidebarOptions1:hover {
+    color: var(--vacay-color);
+    border-radius: 30px;
+    transition: color 100ms ease-out;
+    padding: 0.5rem 1rem;
+  }
+
+  .sidebarOptions1.active {
     color: var(--vacay-color);
   }
-
   .sidebarOptions1 {
     display: flex;
     align-items: center;
     gap: 0rem;
     text-decoration: none;
-    color: var(--vacay-black);
+    color: #fff;
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
     font-weight: 800;
@@ -57,17 +57,17 @@
     outline: none;
   }
 
-  .sidebarOptions1:hover {
-    /* background-color: var(--vacay-background); */
+  /* .sidebarOptions1:hover {
+    background-color: var(--vacay-background);
     color: var(--vacay-color);
     border-radius: 30px;
     transition: color 100ms ease-out;
     padding: 0.5rem 1rem;
-  }
+  } */
 
-  .sidebar1 button {
-    background-color: var(--vacay-background);
-  }
+  /* .sidebar1 button {
+    color: var(--vacay-black);
+  } */
 
   .loggedUser_details1 {
     margin: 0;

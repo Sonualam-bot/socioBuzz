@@ -1,6 +1,6 @@
 .inputBox {
   padding-bottom: 10px;
-  border-bottom: 10px solid var(--vacay-background);
+  border-bottom: 1px solid var(--vacay-background);
   padding-right: 10px;
   position: relative;
 }

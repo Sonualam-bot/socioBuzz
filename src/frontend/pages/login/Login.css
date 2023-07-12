@@ -92,13 +92,14 @@
 /* for hiding image on small screens */
 
 .user_logout_card {
-  width: 310px;
-  height: 120px;
+  width: 220px;
+  height: 90px;
   border-radius: 10px;
   background-color: var(--vacay-background);
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   bottom: 104px;
+  border: 1px solid grey;
 }
 
 .user_logout_card > button {
@@ -123,6 +124,8 @@
   position: absolute;
   bottom: -8px;
   left: 40%;
+  border: 1px solid grey;
+  z-index: -9999;
 
   -webkit-transform: rotate(50deg);
   -moz-transform: rotate(50deg);

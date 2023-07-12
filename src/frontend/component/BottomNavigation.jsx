@@ -31,7 +31,7 @@ export const BottomNavigation = () => {
 
 
                 <div className="sidebar1" >
-                    <NavLink className="sidebarOptions1 active1 hide-text1" to="/" >
+                    <NavLink className="sidebarOptions1  hide-text1" to="/" >
                         <AiFillHome />
                         <span>Home</span>
                     </NavLink>
@@ -42,9 +42,9 @@ export const BottomNavigation = () => {
                         <span>Explore</span>
                     </NavLink>
 
-                    <button className="sidebarOptions1 hide-text1" onClick={() => setShow(!show)} > <AiFillPlusCircle />
+                    <NavLink className="sidebarOptions1 active1 hide-text1" onClick={() => setShow(!show)} > <AiFillPlusCircle />
                         <span>New Post</span>
-                    </button>
+                    </NavLink>
 
                     <NavLink className="sidebarOptions1 hide-text1" to="/bookmarks" >
                         <BsFillBookmarksFill />

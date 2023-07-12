@@ -8,7 +8,7 @@
 }
 
 .post:hover {
-  background-color: rgb(246, 251, 255);
+  /* background-color: rgb(246, 251, 255); */
   cursor: pointer;
 }
 
@@ -108,9 +108,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  /* z-index: 999; */
+  z-index: 999;
   padding: 0.8rem;
   border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .trash {
@@ -195,6 +196,14 @@
   .newPost-container {
     width: 420px;
   }
+  .user_follow_unfollow_btns {
+    width: 90px;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    padding: 8px;
+    outline: none;
+    border: none;
+  }
 }
 
 @media screen and (max-width: 568px) {
@@ -210,5 +219,14 @@
   }
   .newPost-container {
     width: 300px;
+  }
+
+  .user_follow_unfollow_btns {
+    width: 75px;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    padding: 6px;
+    outline: none;
+    border: none;
   }
 }

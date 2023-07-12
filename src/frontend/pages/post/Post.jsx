@@ -7,7 +7,7 @@ import { PostContext } from "src/frontend/context/PostContext"
 import { UserContext } from "src/frontend/context/UserContext";
 
 import { GoBookmark } from 'react-icons/go'
-import { GoBookmarkSlash } from "react-icons/go"
+import { BsFillBookmarkFill } from "react-icons/bs"
 import { AiOutlineShareAlt, AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 
@@ -147,7 +147,7 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
 
                     <div className="post_footer" >
                         <span>
-                            {bookmarks?.includes(_id) ? <span className="bookmarkAdded"><GoBookmarkSlash onClick={() => removePostFromBookmark(_id, userToken)} /></span> : <GoBookmark onClick={() => addPostToBookmark(_id, userToken)} />}
+                            {bookmarks?.includes(_id) ? <span className="bookmarkAdded"><BsFillBookmarkFill onClick={() => removePostFromBookmark(_id, userToken)} /></span> : <GoBookmark onClick={() => addPostToBookmark(_id, userToken)} />}
                         </span>
 
                         <span>

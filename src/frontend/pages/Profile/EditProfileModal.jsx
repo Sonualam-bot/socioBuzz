@@ -57,8 +57,6 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
 
             return data.url;
         } catch (error) {
-            console.error("Error during avatar image upload:", error);
-            // Handle error, e.g., show an error message to the user
             throw error;
         }
     };
@@ -83,8 +81,6 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
 
             return data.url;
         } catch (error) {
-            console.error("Error during banner image upload:", error);
-            // Handle error, e.g., show an error message to the user
             throw error;
         }
     };
@@ -116,8 +112,7 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
 
             setShowModal(false);
         } catch (error) {
-            console.error("Error during profile update:", error);
-            // Handle error, e.g., show an error message to the user
+            throw error;
         }
     };
 

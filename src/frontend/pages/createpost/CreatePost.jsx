@@ -139,15 +139,15 @@ export const CreatePost = () => {
                             <div className="createPost_interactions" >
                                 <div className="createPost_icons" >
                                     <div className="image_upload_alias">
-                                        {/* <label htmlFor="postImage"> */}
-                                        <BsFillImageFill />
-                                        {/* </label> */}
+                                        <label htmlFor="postImage">
+                                            <BsFillImageFill />
+                                        </label>
                                         <input className="upload_postImg" id="postImage" type="file" name="photo" accept="image/*" placeholder="choose img" onChange={handlePostImageUpload} />
                                     </div>
                                     <div className="post_emoji" >
-                                        {/* <label htmlFor="postEmoji"> */}
-                                        <BsEmojiSunglasses onClick={() => setShowPicker(!showPicker)} />
-                                        {/* </label> */}
+                                        <label htmlFor="postEmoji">
+                                            <BsEmojiSunglasses onClick={() => setShowPicker(!showPicker)} />
+                                        </label>
 
                                         <div className="emojiPicker">
                                             {showPicker && <EmojiPicker

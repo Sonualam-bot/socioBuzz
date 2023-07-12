@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid grey;
-  padding-bottom: 0.4rem;
+  padding: 0.4rem;
 }
 
 .edit_user_profile_content img {
@@ -31,10 +31,6 @@
 
 .textarea_div {
   width: 100%;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
 }
 
 .edit_textarea > textarea {

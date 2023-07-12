@@ -1,10 +1,11 @@
 import "./ThemeSwitcher.css"
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+// import { div } from "react-router-dom"
 import { ThemeContext } from "src/frontend/context/ThemeContext"
 
-import { MdDarkMode } from "react-icons/md"
+import { CiDark } from "react-icons/ci"
 import { CiLight } from "react-icons/ci"
+
 
 
 
@@ -13,7 +14,14 @@ export const ThemeSwitcher = () => {
     return (
         <>
             <div className={`App  ${theme} `}>
-                <NavLink className="sidebarOptions" onClick={toggleTheme} > {theme === "light" ? <MdDarkMode /> : <CiLight />} </NavLink>
+                <div className="themeNav" onClick={toggleTheme} >
+                    {theme === "light" ?
+                        <span className="darkSvg">
+                            <CiDark />
+                        </span> :
+                        <CiLight />}
+                </div>
+
             </div>
         </>
     )

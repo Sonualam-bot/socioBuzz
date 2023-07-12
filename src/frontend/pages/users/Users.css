@@ -39,7 +39,7 @@
 .user_suggestion_name p:nth-child(1) {
   font-size: 1.2rem;
   cursor: pointer;
-  color: var(--vacay-black);
+  /* color: var(--vacay-black); */
 }
 
 .user_suggestion_name p:nth-child(2) {
@@ -57,7 +57,6 @@
 }
 
 .user_follow_button button:hover {
-  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
   background-color: var(--vacay-color);
   color: #fff;
 }

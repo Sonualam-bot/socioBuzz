@@ -12,6 +12,7 @@ import { BsFillImageFill } from 'react-icons/bs'
 import EmojiPicker from 'emoji-picker-react';
 import { BsEmojiSunglasses } from 'react-icons/bs'
 import { toast } from "react-hot-toast"
+import { PostLoader } from "src/frontend/component/postLoader/PostLoader"
 
 export const EditPost = () => {
     const { updatedPost,
@@ -114,85 +115,88 @@ export const EditPost = () => {
 
     return (
         <>
-            <div className="edit_post_container" >
-                <div className="edit_action_btns" >
-                    <div>
-                        <span
-                            className="followerCard_closeBtn"
-                            onClick={() => setShowEditDialog(false)}
-                        >
-                            &times;
-                        </span>
-                    </div>
 
-                    <button className="updateBtn" onClick={handleUpdateUserPost} >Update</button>
-                </div>
+            {!edittedPost ?
 
-
-                <div className="edit_user_profile_content">
-
-                    <img className="img" src={user?.avatarUrl} alt="avatar" />
-
-
-                    <div className="textarea_div">
-                        <div className="edit_textarea">
-                            <textarea value={updatedPost.content} onChange={(e) => setUpdatedPost({ ...updatedPost, content: e.target.value })} />
+                <div className="edit_post_container" >
+                    <div className="edit_action_btns" >
+                        <div>
+                            <span
+                                className="followerCard_closeBtn"
+                                onClick={() => setShowEditDialog(false)}
+                            >
+                                &times;
+                            </span>
                         </div>
 
+                        <button className="updateBtn" onClick={handleUpdateUserPost} >Update</button>
+                    </div>
 
 
-                        <div className="contentUrl">
+                    <div className="edit_user_profile_content">
 
-                            {editPostImagePreview && updatedPost.contentUrl ?
-                                (
-                                    <img src={editPostImagePreview} alt="postPreview" />
-                                ) : editPostImagePreview || updatedPost.contentUrl ?
-                                    (
-                                        <img src={editPostImagePreview || updatedPost.contentUrl} alt="" />
-                                    ) :
-                                    null
-                            }
-
-                            {editPostImagePreview || updatedPost.contentUrl ? (
-                                <RxCross1 className="crossSvg" onClick={RemovePostImageClickHandler} />
-                            ) : null}
-
-                            <div className="edit_post_image_upload_input">
-                                <label htmlFor="editPostImage">
-                                    <BsFillImageFill />
-                                </label>
-                                <input className="upload_postImg" id="editPostImage" type="file" name="photo" accept="image/*" placeholder="choose img" onChange={handleEditPostImageUpload} />
+                        <img className="img" src={user?.avatarUrl} alt="avatar" />
 
 
-                                {/* <div className="post_emoji" > */}
-                                <label htmlFor="editPostEmoji">
-                                    <BsEmojiSunglasses onClick={() => setShowPickerInEdit(!showPickerInEdit)} />
-                                </label>
-
-                                <div className="emojiPicker">
-                                    {showPickerInEdit && <EmojiPicker
-                                        onEmojiClick={handleEditEmojiClick}
-                                        searchDisabled={true}
-                                        width={350}
-                                        height={300}
-                                        size={10}
-                                        previewConfig={{ showPreview: false }}
-                                        fontSize=".25rem"
-                                    />}
-                                </div>
-
-                                {/* </div> */}
-
-
+                        <div className="textarea_div">
+                            <div className="edit_textarea">
+                                <textarea value={updatedPost.content} onChange={(e) => setUpdatedPost({ ...updatedPost, content: e.target.value })} />
                             </div>
+
+
+
+                            <div className="contentUrl">
+
+                                {editPostImagePreview && updatedPost.contentUrl ?
+                                    (
+                                        <img src={editPostImagePreview} alt="postPreview" />
+                                    ) : editPostImagePreview || updatedPost.contentUrl ?
+                                        (
+                                            <img src={editPostImagePreview || updatedPost.contentUrl} alt="" />
+                                        ) :
+                                        null
+                                }
+
+                                {editPostImagePreview || updatedPost.contentUrl ? (
+                                    <RxCross1 className="crossSvg" onClick={RemovePostImageClickHandler} />
+                                ) : null}
+
+                                <div className="edit_post_image_upload_input">
+                                    <label htmlFor="editPostImage">
+                                        <BsFillImageFill />
+                                    </label>
+                                    <input className="upload_postImg" id="editPostImage" type="file" name="photo" accept="image/*" placeholder="choose img" onChange={handleEditPostImageUpload} />
+
+
+                                    {/* <div className="post_emoji" > */}
+                                    <label htmlFor="editPostEmoji">
+                                        <BsEmojiSunglasses onClick={() => setShowPickerInEdit(!showPickerInEdit)} />
+                                    </label>
+
+                                    <div className="emojiPicker">
+                                        {showPickerInEdit && <EmojiPicker
+                                            onEmojiClick={handleEditEmojiClick}
+                                            searchDisabled={true}
+                                            width={350}
+                                            height={300}
+                                            size={10}
+                                            previewConfig={{ showPreview: false }}
+                                            fontSize=".25rem"
+                                        />}
+                                    </div>
+
+                                    {/* </div> */}
+
+
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
 
-
-            </div>
+                </div> : <div> <PostLoader /> </div>}
 
 
         </>

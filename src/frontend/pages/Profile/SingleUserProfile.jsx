@@ -10,6 +10,10 @@ import { AiOutlineArrowLeft } from "react-icons/ai"
 import { AuthContext } from "src/frontend/context/AuthContext"
 import { Followings } from "src/frontend/pages/userInteract/Followings"
 import { Followers } from "src/frontend/pages/userInteract/Followers"
+import { ThemeSwitcher } from "src/frontend/pages/theme/ThemeSwitcher"
+import { AiOutlineLogout } from "react-icons/ai"
+
+
 
 export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAction }) => {
     const { homeFeed } = useContext(PostContext)
@@ -50,6 +54,12 @@ export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAc
                     <div className="feed_header_special" >
                         <AiOutlineArrowLeft className="left-arrow" onClick={() => navigate(-1)} />
                         <h2>{userProfile?.firstName} {userProfile?.lastName} </h2>
+                    </div>
+                    <div className="themeCard" >
+                        <ThemeSwitcher />
+                        <div className="logout">
+                            < AiOutlineLogout />
+                        </div>
                     </div>
 
                 </div>

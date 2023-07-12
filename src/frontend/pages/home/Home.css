@@ -24,7 +24,7 @@
 .feed_header {
   position: sticky;
   top: 0;
-  background-color: #bfdbfe;
+  /* background-color: #bfdbfe; */
   z-index: 100;
   border: 1px solid var(--vacay-background);
   padding: 15px 20px;
@@ -44,6 +44,11 @@
   font-weight: 800;
 }
 
+.themeCard {
+  display: flex;
+  gap: 0.4rem;
+}
+
 .home_mid_section::-webkit-scrollbar {
   display: none;
 }
@@ -60,10 +65,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-bottom: 5px solid var(--vacay-background);
+  border-bottom: 1px solid var(--vacay-background);
 }
 
-.home_rightSide_btns button {
+.home_rightSide_btns .trendingLatestBtns {
   font-size: 1rem;
   width: 50%;
   padding: 0.5rem;

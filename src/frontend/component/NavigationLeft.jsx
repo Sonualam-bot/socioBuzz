@@ -53,9 +53,10 @@ export const NavigationLeft = () => {
                     </NavLink>
 
 
-                    <button className="sidebarOptions hide-text" onClick={() => setShow(!show)} > <AiFillPlusCircle />
+                    <NavLink className="sidebarOptions hide-text" onClick={() => setShow(!show)} > <AiFillPlusCircle />
                         <span>New Post</span>
-                    </button>
+                    </NavLink>
+
                 </div>
 
 
