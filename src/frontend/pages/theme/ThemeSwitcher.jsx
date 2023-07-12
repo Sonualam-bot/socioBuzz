@@ -19,7 +19,10 @@ export const ThemeSwitcher = () => {
                         <span className="darkSvg">
                             <CiDark />
                         </span> :
-                        <CiLight />}
+                        <span className="lightSvg">
+                            <CiLight />
+                        </span>
+                    }
                 </div>
 
             </div>
