@@ -15,6 +15,7 @@
 .dark p,
 .dark span {
   color: #fff;
+  background-color: transparent;
 }
 
 .dark .sidebarOptions {
@@ -31,6 +32,9 @@
   width: 50%;
   padding: 0.5rem;
   border: none;
+  background-color: var(--vacay-black);
+  color: #fff;
+  border-right: 1px solid grey;
 }
 
 .dark .home_rightSide_btns button:hover {
@@ -39,7 +43,7 @@
 }
 
 .dark .home_rightSide_btns button.active {
-  background-color: var(--vacay-black);
+  background-color: var(--vacay-color);
   color: #fff;
 }
 
@@ -123,11 +127,9 @@
   color: #fff;
 }
 
-.dark .logout {
+/* .dark .logout {
   color: #fff;
-  stroke-width: 10px;
-  /* background-color: #fff; */
-}
+} */
 
 .dark .loggedUser_details:hover {
   color: var(--vacay-color);
@@ -152,8 +154,69 @@
   background-color: var(--vacay-black);
 }
 
-.dark .lightSvg {
+.dark .followerCard_content {
   background-color: var(--vacay-black);
+  color: #fff;
+}
+
+.dark .themeNav {
+  backdrop-filter: blur(15px);
+  background: none;
+}
+
+.dark .themeNav svg {
+  font-size: 1.5rem;
+}
+
+.dark .user_follow_button button {
+  background-color: var(--vacay-black);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.dark .user_follow_button button:hover {
+  background-color: var(--vacay-color);
+  color: #fff;
+}
+
+.dark .suggestion_input {
+  border: 1px solid #fff;
+  background-color: var(--vacay-black);
+}
+
+.dark .suggestion_input svg {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-left: 10px;
+}
+
+.dark .suggestion_input input {
+  background-color: var(--vacay-black);
+  outline: none;
+  font-size: 1rem;
+  caret-color: #fff;
+}
+
+.dark .feed_header {
+  background-color: var(--vacay-black);
+}
+
+.dark .following_container:hover {
+  background-color: #0d0d0d;
+}
+
+.dark .unFollowBtn,
+.dark .followBtn,
+.dark .unFollowBtnAgain {
+  border: 1px solid #fff;
+  background-color: var(--vacay-black);
+  color: #fff;
+}
+
+.dark .unFollowBtn:hover,
+.dark .followBtn:hover,
+.dark .unFollowBtnAgain:hover {
+  background-color: var(--vacay-color);
   color: #fff;
 }
 
@@ -167,8 +230,20 @@
   color: var(--vacay-black);
 }
 
+.dark .sidebarOptions {
+  color: #fff;
+}
+
+.light .sidebarOptions1:hover {
+  color: var(--vacay-color);
+}
+
 .light .sidebarOptions1 {
   color: var(--vacay-black);
+}
+
+.light .sidebarOptions1.active1 {
+  color: var(--vacay-color);
 }
 
 .light .newPost-wrapper {
@@ -182,5 +257,8 @@
 
 .light .logout {
   color: var(--vacay-black);
-  background-color: #fff;
+}
+
+.logout svg {
+  font-size: 1.2rem;
 }

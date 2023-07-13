@@ -66,7 +66,8 @@
 }
 
 .postImagePreview {
-  width: 100%;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   margin-top: 1.4rem;
   border-radius: 5px;
@@ -91,16 +92,17 @@
   width: 100%;
   margin: 0.5rem auto;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative;
 }
 
 .postPreviewDiv svg {
   position: absolute;
-  left: 2%;
-  top: 10%;
+  left: 1%;
+  top: 12%;
   cursor: pointer;
   background-color: var(--vacay-background);
+  color: var(--vacay-black);
   height: 20px;
   width: 20px;
   border-radius: 50%;

@@ -82,7 +82,8 @@
 }
 
 .unFollowBtn,
-.followBtn {
+.followBtn,
+.unFollowBtnAgain {
   width: 110px;
   font-size: 1rem;
   border-radius: 30px;
@@ -92,7 +93,8 @@
 }
 
 .unFollowBtn:hover,
-.followBtn:hover {
+.followBtn:hover,
+.unFollowBtnAgain:hover {
   background-color: var(--vacay-color);
   border-radius: 30px;
   width: 110px;
@@ -111,6 +113,10 @@
   content: "Follows You";
 }
 
+.unFollowBtnAgain::after {
+  content: "You Follow";
+}
+
 .unFollowBtn:hover::after {
   content: "Unfollow";
 }
@@ -118,6 +124,10 @@
 .followBtn:hover::after {
   content: "Follow Back";
 }
+
+/* .unFollowBtnAgain:hover::after {
+  content: "Unfollow";
+} */
 
 .feed_header_HeaderText {
   display: flex;

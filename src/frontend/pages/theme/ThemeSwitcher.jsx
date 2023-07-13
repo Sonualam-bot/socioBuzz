@@ -14,15 +14,16 @@ export const ThemeSwitcher = () => {
     return (
         <>
             <div className={`App  ${theme} `}>
-                <div className="themeNav" onClick={toggleTheme} >
-                    {theme === "light" ?
-                        <span className="darkSvg">
+                <div className="themeNav" onClick={toggleTheme}>
+                    {theme === "light" ? (
+                        <div className="darkSvg">
                             <CiDark />
-                        </span> :
-                        <span className="lightSvg">
+                        </div>
+                    ) : (
+                        <div className="lightSvg">
                             <CiLight />
-                        </span>
-                    }
+                        </div>
+                    )}
                 </div>
 
             </div>

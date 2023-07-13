@@ -98,6 +98,7 @@ export const UserContextProvider = ({ children }) => {
                     getUser: response.data.user
                 }
             })
+            setShowSearchModal(false)
         } catch (e) {
             console.log(e)
         }

@@ -29,7 +29,7 @@ export const NavigationLeft = () => {
 
 
                 <div className="sidebar" >
-                    <NavLink className="sidebarOptions active hide-text" to="/" >
+                    <NavLink className="sidebarOptions  hide-text" to="/" >
                         <AiFillHome />
                         <span>Home</span>
                     </NavLink>

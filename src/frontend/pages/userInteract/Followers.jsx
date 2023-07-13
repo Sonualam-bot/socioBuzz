@@ -22,19 +22,7 @@ export const Followers = ({ userProfile }) => {
     return (
         <>
             <div className="feed_header_special">
-                {/* <div className="feed_header_HeaderText">
-                    <AiOutlineArrowLeft className="left-arrow" onClick={() => navigate(-1)} />
-                    <div>
-                        <h2>{user?.firstName} {user?.lastName}</h2>
-                        <p className="following_header_username" >@{user?.username}</p>
-                    </div>
 
-                </div> */}
-
-                {/* <div className="following_user_special" >
-                    <NavLink style={getActiveStyle} to="/profile/following" className="p">Following</NavLink>
-                    <NavLink style={getActiveStyle} to="/profile/followers" className="p">Followers</NavLink>
-                </div> */}
 
             </div>
             {userProfile?.followers.length < 1 ?

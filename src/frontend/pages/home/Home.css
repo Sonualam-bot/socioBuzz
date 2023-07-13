@@ -25,12 +25,14 @@
   position: sticky;
   top: 0;
   /* background-color: #bfdbfe; */
+  background-color: #fff;
   z-index: 100;
   border: 1px solid var(--vacay-background);
   padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(7px);
 }
 
 .feed_header_special {
@@ -46,7 +48,10 @@
 
 .themeCard {
   display: flex;
+  align-items: center;
   gap: 0.4rem;
+  backdrop-filter: blur(15px);
+  background: none;
 }
 
 .home_mid_section::-webkit-scrollbar {
@@ -83,6 +88,7 @@
 .home_rightSide_btns button.active {
   background-color: var(--vacay-color);
   color: #fff;
+  font-weight: 600;
 }
 
 /* home feed scroll */
@@ -116,6 +122,9 @@
 
 @media screen and (min-width: 1250px) {
   .home_header_search {
+    display: none;
+  }
+  .showSearchedUsers {
     display: none;
   }
 }

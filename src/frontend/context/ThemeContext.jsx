@@ -1,4 +1,6 @@
 import { createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
 
 export const ThemeContext = createContext();
 
@@ -15,7 +17,14 @@ export const ThemeContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("theme", theme)
         document.body.className = theme
+
+
+        if (theme === "dark") {
+            toast.success("Dark mode Activated")
+        }
+
     }, [theme])
+
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }} >

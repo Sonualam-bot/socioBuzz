@@ -70,29 +70,38 @@ function App() {
         position="bottom-right"
         reverseOrder={false}
         containerStyle={{
+          position: "fixed",
           bottom: "3rem",
           right: "3rem",
+          zIndex: "999"
         }}
         toastOptions={{
           duration: 2000,
         }}
-      />}
+      />
+      }
 
 
       {show &&
-        <div>
+        <div  >
 
-          <div className="newPost-wrapper" onClick={() => setShow(false)}></div>
+          <div className="newPost-wrapper"
+          //  onClick={() => setShow(false)}
+          >
 
-          <div className="newPost-container">
-            <span
-              className="followerCard_closeBtn"
-              onClick={() => setShow(false)}
-            >
-              &times;
-            </span>
-            <CreatePost />
+
+            <div className="newPost-container">
+              <span
+                className="followerCard_closeBtn"
+                onClick={() => setShow(false)}
+              >
+                &times;
+              </span>
+              <CreatePost />
+            </div>
+
           </div>
+
         </div>
 
       }

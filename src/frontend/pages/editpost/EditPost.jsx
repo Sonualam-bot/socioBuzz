@@ -67,14 +67,15 @@ export const EditPost = () => {
     const handleUpdateUserPost = () => {
         if (chooseEditImage) {
             uploadImageFileEditPost()
+
             // setEdittedPost(true)
-        } else if (updatedPost?.content.trim() === "") {
+        } else if (updatedPost?.content.trim() === "" && updatedPost?.contentUrl === null) {
             toast.error("write something or choose an image")
         } else {
             editUserPost(editPostId, updatedPost, userToken)
             toast.success("Post Updated")
             setEdittedPost(true)
-
+            setShowEditAction(false)
         }
 
     }
@@ -123,7 +124,8 @@ export const EditPost = () => {
                         <div>
                             <span
                                 className="followerCard_closeBtn"
-                                onClick={() => setShowEditDialog(false)}
+                                onClick={() => { setShowEditDialog(false), setShowEditAction(false) }
+                                }
                             >
                                 &times;
                             </span>

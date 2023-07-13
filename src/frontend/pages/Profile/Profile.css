@@ -1,8 +1,7 @@
-.feed_header svg {
+/* .feed_header svg {
   font-size: 1.2rem;
-  stroke-width: 100;
   cursor: pointer;
-}
+} */
 
 .modal-wrapper {
   position: fixed;
@@ -11,6 +10,7 @@
   bottom: 0;
   top: 0;
   background-color: rgba(189, 189, 189, 0.9);
+  backdrop-filter: blur(3px);
 }
 
 .modal-container {
@@ -36,6 +36,7 @@
   position: absolute;
   right: 0;
   margin: 8px;
+  font-weight: bold;
 }
 
 .modal-btn:hover {
@@ -45,7 +46,7 @@
   border-radius: 30px;
   width: 110px;
   font-size: 1rem;
-  padding: 10px;
+  /* padding: 10px; */
   outline: none;
   color: #fff;
   border: none;
@@ -225,6 +226,11 @@
 .profile-details {
   margin: 4rem 0 0 1.4rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
 }
 
 .edit_profile_details {
@@ -303,7 +309,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1.7rem;
   border-bottom: 1px solid var(--primary);
   padding: 10px;
   text-transform: uppercase;
@@ -457,6 +462,7 @@
   max-height: 80vh;
   overflow-y: auto;
   border-radius: 5px;
+  border: 1px solid grey;
 }
 
 .followerCard_closeBtn {
@@ -464,14 +470,14 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  color: #9b1111;
+  /* color: #9b1111; */
   cursor: pointer;
   width: 30px;
   height: 30px;
 }
 
 .followerCard_closeBtn:hover {
-  border: 1px solid #9b1111;
+  border: 1px solid #fff;
   z-index: 999;
   border-radius: 50%;
   font-weight: 1000;
@@ -515,5 +521,9 @@
     width: 90px;
     font-size: 0.8rem;
     padding: 10px;
+  }
+
+  .modal-container {
+    width: 320px;
   }
 }

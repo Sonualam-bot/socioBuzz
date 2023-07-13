@@ -2,6 +2,7 @@
   width: 100%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   padding: 4px;
+  overflow: hidden;
 }
 
 .edit_action_btns {
@@ -53,8 +54,8 @@
 
 .contentUrl .crossSvg {
   position: absolute;
-  top: 39%;
-  left: 17%;
+  top: 44.5%;
+  left: 38.5%;
   margin-left: 4px;
   cursor: pointer;
   color: var(--vacay-background);

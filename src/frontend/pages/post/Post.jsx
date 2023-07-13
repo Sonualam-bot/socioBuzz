@@ -37,12 +37,14 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
         handleSortByDate,
         editPostId,
         updatedPost,
-        setUpdatedPost
+        setUpdatedPost,
+        setShowEditAction,
+        showEditAction
     } = useContext(PostContext)
     const { userToken } = useContext(AuthContext)
     const { unfollowHandler, followHandler, userState: { user }, comment, handleCommentInput, postCommentHandler, getCommentHandler, userProfileHandler } = useContext(UserContext)
 
-    const [showEditAction, setShowEditAction] = useState(false)
+
 
     const userDetails =
         explore || bookmark || singleUserProfile || singlePost
@@ -97,17 +99,14 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
 
                                 <div>
                                     {showEditdialog &&
-                                        <div>
+                                        <div >
 
-                                            <div className="newPost-wrapper" onClick={() => {
+                                            <div className="newPost-wrapper" >
 
-                                                setShowEditDialog(false)
-                                                setShowEditAction(false)
-                                            }}></div>
+                                                <div className="newPost-container">
 
-                                            <div className="newPost-container">
-
-                                                <EditPost />
+                                                    <EditPost />
+                                                </div>
                                             </div>
                                         </div>
 

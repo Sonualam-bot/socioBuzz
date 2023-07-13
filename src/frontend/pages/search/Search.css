@@ -10,6 +10,7 @@
 .suggestion_input svg {
   font-size: 1.3rem;
   color: var(--primary);
+  margin-left: 10px;
 }
 
 .suggestion_input input {

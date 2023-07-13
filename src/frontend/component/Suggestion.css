@@ -22,7 +22,7 @@
   height: 50px;
   object-fit: cover;
   border-radius: 999px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--primary);
 }
 .searched-users {
   display: flex;

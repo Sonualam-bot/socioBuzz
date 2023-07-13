@@ -1,5 +1,5 @@
 .user_suggestion_heading h2 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 1rem 0 0 0;
   color: var(--primary);
 }
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
@@ -39,6 +39,7 @@
 .user_suggestion_name p:nth-child(1) {
   font-size: 1.2rem;
   cursor: pointer;
+  font-weight: 500;
   /* color: var(--vacay-black); */
 }
 
@@ -46,12 +47,14 @@
   font-size: 15px;
   color: var(--primary);
   cursor: pointer;
+  font-weight: 400;
 }
 
 .user_follow_button button {
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 20px;
+  width: 70px;
   outline: none;
   border: none;
 }

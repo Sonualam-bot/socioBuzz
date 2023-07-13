@@ -1,6 +1,6 @@
 import axios from "axios"
 import { createContext, useState, useEffect, useReducer, useContext } from "react"
-import { toast } from "react-hot-toast"
+import toast from "react-hot-toast"
 import { useNavigate } from "react-router"
 import { AuthContext } from "src/frontend/context/AuthContext"
 import { postreducer, initialData } from "src/reducer/postreducer"
@@ -27,6 +27,8 @@ export const PostContextProvider = ({ children }) => {
     const [show, setShow] = useState(false)
 
     const [isPosting, setIsPosting] = useState(false)
+
+    const [showEditAction, setShowEditAction] = useState(false)
 
 
 
@@ -59,6 +61,7 @@ export const PostContextProvider = ({ children }) => {
                     bookmarks: response.data.bookmarks
                 }
             })
+            toast.success("Added To Bookmark")
         } catch (e) {
             console.log(e)
         }
@@ -77,7 +80,7 @@ export const PostContextProvider = ({ children }) => {
                     bookmarks: response.data.bookmarks
                 }
             })
-            console.log("bookmarrks", response.data.bookmarks)
+
         } catch (e) {
             console.log(e)
         }
@@ -96,6 +99,7 @@ export const PostContextProvider = ({ children }) => {
                     bookmarks: response.data.bookmarks
                 }
             })
+            toast.success("Removed From Bookmark")
 
         } catch (e) {
             console.log(e)
@@ -115,6 +119,7 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
+            toast.success("Post Liked")
 
         } catch (e) {
             console.log(e)
@@ -136,7 +141,7 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
-
+            toast.success("Post Disliked")
         } catch (e) {
             console.log(e)
         }
@@ -167,7 +172,7 @@ export const PostContextProvider = ({ children }) => {
                     posts: response.data.posts
                 }
             })
-
+            toast.success("New Post Created Successfully")
             setIsPosting(false)
         } catch (e) {
             console.log(e)
@@ -220,6 +225,7 @@ export const PostContextProvider = ({ children }) => {
                     delete: response.data.posts
                 }
             })
+            toast.success("Post Deleted")
         } catch (e) {
             console.log(e)
         }
@@ -297,7 +303,9 @@ export const PostContextProvider = ({ children }) => {
         show,
         setShow,
         isPosting,
-        setIsPosting
+        setIsPosting,
+        showEditAction,
+        setShowEditAction
 
     }
 

@@ -98,7 +98,7 @@ p {
     overflow-x: hidden;
     grid-area: middle;
     border-left: 0px solid var(--primary-color);
-    border-right: 0px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
     border-width: thin;
   }
 }
@@ -147,7 +147,7 @@ p {
     font-size: 1.75rem;
   }
   p {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -161,6 +161,6 @@ p {
   }
 
   p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
