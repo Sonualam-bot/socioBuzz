@@ -18,7 +18,7 @@ import { AiOutlineLogout } from "react-icons/ai"
 export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAction }) => {
     const { homeFeed } = useContext(PostContext)
     const { userProfileHandler, unfollowHandler, followHandler, loading, bannerLoader, userState: { user } } = useContext(UserContext)
-    const { userToken } = useContext(AuthContext)
+    const { userToken, logoutHandler } = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -57,7 +57,7 @@ export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAc
                     </div>
                     <div className="themeCard" >
                         <ThemeSwitcher />
-                        <div className="logout">
+                        <div className="logout" onClick={logoutHandler}>
                             < AiOutlineLogout />
                         </div>
                     </div>
