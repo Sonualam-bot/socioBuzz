@@ -149,24 +149,25 @@ export const Post = ({ avatarUrl, post, isCurrentUser, isUserFollowed, explore, 
                             {bookmarks?.includes(_id) ? <span className="bookmarkAdded"><BsFillBookmarkFill onClick={() => removePostFromBookmark(_id, userToken)} /></span> : <GoBookmark onClick={() => addPostToBookmark(_id, userToken)} />}
                         </span>
 
-                        <span>
-                            {
-                                <span
-                                    className="likeCount"
-                                    onClick={() => {
+                        <span className="likeCountParent">
 
-                                        if (!isPostLiked(likes, user)) {
-                                            addPostToUserLikes(_id, userToken)
+                            <span
+                                className="likeCount"
+                                onClick={() => {
 
-                                        } else {
-                                            removePostFromUserLikes(_id, userToken)
-                                        }
+                                    if (!isPostLiked(likes, user)) {
+                                        addPostToUserLikes(_id, userToken)
 
-                                    }}  >
+                                    } else {
+                                        removePostFromUserLikes(_id, userToken)
+                                    }
 
-                                    {isPostLiked(likes, user) ? <span className="likedHeart" ><AiFillHeart /></span> : <span><AiOutlineHeart /></span>}
-                                </span>
-                            }{likes?.likeCount}
+                                }}  >
+
+                                {isPostLiked(likes, user) ? <span className="likedHeart" ><AiFillHeart /></span> : <span><AiOutlineHeart /></span>}
+                            </span>
+
+                            <span>{likes?.likeCount}</span>
                         </span>
                         <span>
                             <AiOutlineShareAlt />

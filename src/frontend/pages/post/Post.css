@@ -87,10 +87,16 @@
   padding-top: 3px;
 }
 
-/* .likeCount {
-  margin-bottom: 50px;
-  color: red;
-} */
+.likeCountParent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.likeCountParent svg {
+  margin-bottom: -2px;
+  font-size: 1.1rem;
+}
 
 .editDeleteModal {
   position: relative;
