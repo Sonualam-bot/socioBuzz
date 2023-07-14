@@ -42,6 +42,23 @@
   outline: none;
 }
 
+.sidebarOptionstop {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--vacay-black);
+  font-size: 1.4rem;
+  padding: 0rem;
+  padding-left: 5px;
+  font-weight: 800;
+  margin: 0rem;
+  border: none;
+  outline: none;
+}
+.sidebarOptionstop > span {
+  font-family: Dancing Script, cursive;
+}
+
 .sidebarOptions:hover {
   background-color: var(--vacay-background);
   color: var(--vacay-color);
@@ -52,6 +69,13 @@
 
 .sidebarOptions.active {
   color: var(--vacay-color);
+}
+
+.sidebarOptionstop > img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .loggedUser_details {
@@ -121,6 +145,9 @@
   }
 
   .sidebarOptions.hide-text span {
+    display: none;
+  }
+  .sidebarOptionstop.hide-text span {
     display: none;
   }
 

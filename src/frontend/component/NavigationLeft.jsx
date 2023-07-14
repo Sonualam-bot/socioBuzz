@@ -1,4 +1,5 @@
 import "./Navigation.css"
+import logo from "src/assets/logo.png"
 import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { AuthContext } from "src/frontend/context/AuthContext"
@@ -7,7 +8,6 @@ import { UserContext } from "src/frontend/context/UserContext"
 import { AiFillHome, AiOutlinePlusCircle, AiFillPlusCircle } from "react-icons/ai"
 import { MdExplore } from 'react-icons/md'
 import { BsFillBookmarksFill } from 'react-icons/bs'
-import { TbLogout2 } from "react-icons/tb"
 import { CgProfile } from "react-icons/cg"
 import { BiDotsHorizontalRounded } from "react-icons/bi"
 import { CreatePost } from "src/frontend/pages/createpost/CreatePost"
@@ -29,6 +29,13 @@ export const NavigationLeft = () => {
 
 
                 <div className="sidebar" >
+                    <NavLink className="sidebarOptionstop hide-text" to="/" >
+                        <img src={logo} alt="logo" />
+                        <span>VacayGram</span>
+                    </NavLink>
+
+
+
                     <NavLink className="sidebarOptions  hide-text" to="/" >
                         <AiFillHome />
                         <span>Home</span>

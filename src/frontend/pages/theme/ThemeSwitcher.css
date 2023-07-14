@@ -166,6 +166,7 @@
 
 .dark .themeNav svg {
   font-size: 1.5rem;
+  mix-blend-mode: color-burn;
 }
 
 .dark .user_follow_button button {
