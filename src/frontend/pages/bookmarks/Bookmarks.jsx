@@ -21,7 +21,6 @@ export const Bookmarks = () => {
 
     const getAvatarUrl = (username) => {
         const following = users?.find((userFollowing) => userFollowing?.username === username)
-        console.log("followingggg", following)
         return following?.avatarUrl;
     }
 

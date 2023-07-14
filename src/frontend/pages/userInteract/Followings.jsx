@@ -11,10 +11,6 @@ import { AiOutlineArrowLeft } from "react-icons/ai"
 
 export const Followings = ({ userProfile }) => {
 
-    // const { userState: { user, getUser } } = useContext(UserContext)
-    // const { username } = user;
-
-    // console.log("following checking", user?.following)
 
 
     const navigate = useNavigate()

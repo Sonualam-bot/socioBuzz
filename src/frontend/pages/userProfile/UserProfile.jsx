@@ -4,7 +4,7 @@ import { SingleUserProfile } from "src/frontend/pages/Profile/SingleUserProfile"
 
 export const UserProfile = () => {
     const { userState: { getUser } } = useContext(UserContext)
-    console.log("gettinguser", getUser)
+
     return (
         <>
             <SingleUserProfile userProfile={getUser} />

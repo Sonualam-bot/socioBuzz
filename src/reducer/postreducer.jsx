@@ -5,7 +5,7 @@ export const postreducer = (state, action) => {
     const { type, payload } = action;
     switch (type) {
         case "ALL_POSTS":
-            console.log("ALL_POSTS", payload)
+
             return { ...state, posts: payload.posts }
 
         case "ADD_TO_BOOKMARK":
@@ -23,7 +23,7 @@ export const postreducer = (state, action) => {
             return { ...state, posts: payload.delete }
 
         case "EDIT_POST":
-            console.log("EDIT_POST", payload)
+
             return { ...state, posts: payload.edit }
 
         case "SINGLE_POST":
@@ -39,7 +39,7 @@ export const postreducer = (state, action) => {
             return { ...state, sortBy: payload }
 
         case "EDIT_USER_PROFILE":
-            console.log("EDIT_USER_PROFILE", payload)
+
             return { ...state, users: payload.editUserProfile }
 
 

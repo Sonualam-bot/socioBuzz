@@ -150,7 +150,6 @@ export const PostContextProvider = ({ children }) => {
 
     const handleInput = (e) => {
         const { name, value } = e.target
-        console.log({ ...input, [name]: value })
         setInput({ ...input, [name]: value })
     }
 

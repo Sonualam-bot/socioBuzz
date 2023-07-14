@@ -30,7 +30,7 @@ export const Followers = ({ userProfile }) => {
                 userProfile?.followers?.map((followers) => {
                     return (
 
-                        <FollowCard followed={followers} userProfile={userProfile} follower />
+                        <FollowCard key={followers?._id} followed={followers} userProfile={userProfile} follower />
                     )
                 })}
         </>

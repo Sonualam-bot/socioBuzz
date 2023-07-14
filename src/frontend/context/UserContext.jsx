@@ -12,13 +12,13 @@ export const UserContextProvider = ({ children }) => {
     const { dispatch, users } = useContext(PostContext)
     const { userToken } = useContext(AuthContext)
 
-    // const userName = JSON.parse(localStorage.getItem("userName"));
+
 
     const loggedInUser = JSON.parse(localStorage.getItem("user"))
-    // console.log("users coming fROMMM userContext", loggedInUser)
+
 
     const [userState, userDispatch] = useReducer(userReducer, userInititalState);
-    // console.log("consoling while following", userState?.user)
+
 
     const [comment, setComment] = useState({
         commentData: ""
@@ -60,7 +60,7 @@ export const UserContextProvider = ({ children }) => {
                     follows: response.data.user
                 }
             })
-            console.log("following", response.data)
+
         } catch (e) {
             console.log(e)
         }
@@ -80,7 +80,7 @@ export const UserContextProvider = ({ children }) => {
                     unfollows: response.data.user
                 }
             })
-            console.log("unfollow", response.data)
+
 
         } catch (e) {
             console.log(e)
@@ -91,7 +91,7 @@ export const UserContextProvider = ({ children }) => {
     const userProfileHandler = async (userId) => {
         try {
             const response = await axios.get(`/api/users/${userId}`)
-            // console.log("get user from here", response.data.user)
+
             userDispatch({
                 type: "GET_USER",
                 payload: {
@@ -114,7 +114,7 @@ export const UserContextProvider = ({ children }) => {
                     authorization: token
                 }
             })
-            console.log("resposne", response)
+
         } catch (e) {
             console.log(e)
         }
@@ -122,7 +122,7 @@ export const UserContextProvider = ({ children }) => {
 
     const handleCommentInput = (e) => {
         const { name, value } = e.target;
-        console.log({ ...comment, [name]: value })
+
         setComment({ ...comment, [name]: value })
     }
 
@@ -130,7 +130,7 @@ export const UserContextProvider = ({ children }) => {
     const getCommentHandler = async (postId) => {
         try {
             const response = await axios.get(`/api/comments/${postId}`)
-            console.log("response for all comments", response)
+
         } catch (e) {
             console.log(e)
         }

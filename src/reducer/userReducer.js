@@ -20,7 +20,7 @@ export const userReducer = (userState, action) => {
             return { ...userState, user: payload.unfollows }
 
         case "EDIT_USER_PROFILE":
-            console.log("this is coming from editprofileHandler", payload);
+
             return {
                 ...userState,
                 user: { ...userState.user, ...payload.editUserProfile },
@@ -31,7 +31,7 @@ export const userReducer = (userState, action) => {
             return { ...userState, searchedUser: payload.searchedUser }
 
         case "GET_USER":
-            console.log("GET_USER", payload.getUser)
+
             return { ...userState, getUser: payload.getUser }
 
 

@@ -8,7 +8,7 @@ export const FollowCard = ({ followed, following, follower, userProfile }) => {
     const { userToken } = useContext(AuthContext)
     const { _id, avatarUrl, firstName, lastName, username, bio } = followed;
 
-    // console.log("this si the searched user", searchedUser)
+
 
     const isFollower = userProfile?.followers.find((userData) => userData._id === _id)
     const isFollowing = userProfile?.following.find((userData) => userData._id === _id)

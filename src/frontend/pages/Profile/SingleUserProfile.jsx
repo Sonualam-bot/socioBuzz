@@ -29,7 +29,7 @@ export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAc
 
 
     const userPosts = homeFeed?.filter(({ username }) => username === userProfile?.username)
-    // console.log("userposts", userPosts)
+
 
 
     const getAvatarUrl = (username) => {
@@ -43,7 +43,7 @@ export const SingleUserProfile = ({ userProfile, showEditModal, handleUserEditAc
 
 
     const isUserFollowedByLoggedInUser = user?.following?.find((userData) => userData?._id === userProfile?._id)
-    // console.log({ isUserFollowedByLoggedInUser })
+
 
 
 

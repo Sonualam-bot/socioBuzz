@@ -13,7 +13,7 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
     const { editProfileHandler, userState: { user }, setShowModal, setLoading, setBannerLoader } = useContext(UserContext);
     const { userToken } = useContext(AuthContext);
 
-    // console.log("edit se user", user)
+
 
     const [image, setImage] = useState({ avatarUrl: "" });
 
@@ -25,7 +25,7 @@ export const EditProfileModal = ({ closeModal, updateProfile, setUpdateProfile }
     const [previewImage, setPreviewImage] = useState(null);
     const [previewBannerImage, setPreviewBannerImage] = useState(null);
 
-    // const [loading, setLoading] = useState(false)
+
 
 
 
