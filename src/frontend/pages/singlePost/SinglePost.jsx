@@ -4,6 +4,8 @@ import { PostContext } from "src/frontend/context/PostContext"
 import { UserContext } from "src/frontend/context/UserContext"
 import { Post } from "src/frontend/pages/post/Post"
 
+import "./SinglePost.css"
+
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import { useNavigate } from "react-router"
 
@@ -41,9 +43,9 @@ export const SinglePost = () => {
     return (
         <>
 
-            <div className="feed_header" key={singlePost?._id}>
+            <div className=" singleFeedHeader" key={singlePost?._id}>
                 <AiOutlineArrowLeft className="left-arrow" onClick={() => navigate(-1)} />
-                <h2>{singlePost?.username} {singlePost?.lastName} </h2>
+                <h3>{singlePost?.username} {singlePost?.lastName} </h3>
             </div>
             <Post avatarUrl={avatarUrl} post={singlePost} isCurrentUser={isCurrentUser} isUserFollowed={isUserFollowed} singlePost />
         </>

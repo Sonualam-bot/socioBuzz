@@ -1,0 +1,18 @@
+.singleFeedHeader {
+  position: sticky;
+  top: 0;
+  /* background-color: #bfdbfe; */
+  background-color: #fff;
+  z-index: 100;
+  border: 1px solid var(--vacay-background);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(7px);
+}
+
+.singleFeedHeader svg {
+  font-size: 1.5rem;
+  cursor: pointer;
+}

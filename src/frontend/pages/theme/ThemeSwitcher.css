@@ -202,6 +202,10 @@
   background-color: var(--vacay-black);
 }
 
+.dark .singleFeedHeader {
+  background-color: var(--vacay-black);
+}
+
 .dark .following_container:hover {
   background-color: #0d0d0d;
 }
