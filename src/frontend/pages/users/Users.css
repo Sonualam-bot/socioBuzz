@@ -40,7 +40,7 @@
   font-size: 1.2rem;
   cursor: pointer;
   font-weight: 500;
-  /* color: var(--vacay-black); */
+  color: var(--vacay-black);
 }
 
 .user_suggestion_name p:nth-child(2) {
