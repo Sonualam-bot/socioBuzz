@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
     // here above i am checking if there is a theme stored in localStorage and if found that theme is used and if not then default is light theme. and next useEffect does the magic to store the theme in localStorage
 
