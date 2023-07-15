@@ -51,4 +51,4 @@ $ npm run dev
 - React Hot Toast
 - React Loader Skeleton
 
-```
+
