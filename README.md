@@ -1,4 +1,3 @@
-# VacayGram
 
 <div align="center">
   <img src="https://socio-buzz.vercel.app/assets/logo-495d48c4.png" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;">
