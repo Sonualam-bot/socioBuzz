@@ -52,6 +52,11 @@ export const Signup = () => {
 
                             <button onClick={handleCreateAccount} >Create Account</button>
 
+                            <div className="footerLogin">
+                                <span>Already have an account?</span>
+                                <NavLink className="NavLink2" to="/login">Login</NavLink>
+                            </div>
+
                         </form>
                     </div>
                 </div>

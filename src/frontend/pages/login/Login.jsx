@@ -56,6 +56,10 @@ export const Login = () => {
                             <input type="password" name="password" value={loginInput.password} placeholder="Password" onChange={handleLoginInput} />
                             <button type="submit" >Login</button>
                             <button onClick={guestLogin} >Guest Login</button>
+                            <div className="footerLogin" >
+                                <span>Don't have an account?</span>
+                                <NavLink className="NavLink" to="/signup">Signup</NavLink>
+                            </div>
                         </form>
                     </div>
                 </div>

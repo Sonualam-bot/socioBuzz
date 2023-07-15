@@ -52,6 +52,23 @@
   text-align: center;
 }
 
+.footerLogin > span {
+  font-size: 14px;
+  color: var(--vacay-black);
+}
+
+.footerLogin > .NavLink {
+  width: 50%;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  color: rebeccapurple;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
 .right {
   flex: 1;
   padding: 50px;
@@ -132,6 +149,12 @@
   -o-transform: rotate(50deg);
   -ms-transform: rotate(50deg);
   transform: rotate(50deg);
+}
+
+@media screen and (min-width: 568px) {
+  .footerLogin {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {

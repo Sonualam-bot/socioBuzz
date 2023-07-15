@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { NavLink } from "react-router-dom"
 import { Header } from "src/frontend/component/Header"
 import { PostContext } from "src/frontend/context/PostContext"
+import logo from "src/assets/logo.png"
 
 import "./Home.css"
 import "../Profile/Profile.css"
@@ -62,7 +63,11 @@ export const Home = () => {
                 {/* <div className={`header ${scrollDirection === "down" ? "hide" : "show"}`}> */}
 
                 <div className="feed_header">
-                    <h2>Home</h2>
+                    <div className="home_img">
+                        <h2>Home</h2>
+                        <img src={logo} alt="logo" />
+                    </div>
+
                     <div className="home_header_search" >
                         <Search />
                     </div>
