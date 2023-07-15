@@ -1,6 +1,5 @@
 # VacayGram
 
-```js
 <div align="center">
   <img src="[https://bookish-kp.vercel.app/static/media/logo.508d857b57084282a17d.png](https://github.com/Sonualam-bot/socioBuzz/blob/main/src/assets/logo.png)" alt="Project Logo" width="100" style="display: block; margin: 0 auto; font-size: 24px;">
 </div> <h1 align="center">Vacay Gram</h1>
@@ -10,7 +9,7 @@
 <hr/>
 <h2>How to install and run locally ? </h2>
 
-```
+
 $ git clone https://github.com/Sonualam-bot/socioBuzz
 $ cd socioBuzz
 $ npm install
