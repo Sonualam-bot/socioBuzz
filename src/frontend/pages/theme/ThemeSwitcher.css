@@ -233,6 +233,10 @@
   color: #fff;
 }
 
+.dark .user_suggestion_name p:nth-child(1) {
+  color: #fff;
+}
+
 /* light mode */
 /* light mode */
 /* light mode */

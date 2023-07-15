@@ -29,7 +29,7 @@ export const Signup = () => {
             <div className="login2" >
                 <div className="card2" >
                     <div className="left2" >
-                        <h1>Socio Wave</h1>
+                        <h1>Vacay Gram</h1>
                         <p>
                             Connecting minds, shaping conversations, and embracing the power of brevity. Welcome to our vibrant social sphere!
                         </p>
