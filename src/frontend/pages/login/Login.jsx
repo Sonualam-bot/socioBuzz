@@ -11,8 +11,8 @@ export const Login = () => {
 
     const guestLogin = () => {
         setLoginInput({
-            username: "adarshbalika",
-            password: "adarshBalika123"
+            username: "mralam",
+            password: "mralam123"
         })
     }
 
