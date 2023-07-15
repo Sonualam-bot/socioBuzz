@@ -17,7 +17,7 @@ export const users = [
     posts: [],
     avatarUrl: "https://github.com/Sonualam-bot/socioBuzz/blob/main/src/assets/sonu.jpeg?raw=true",
     bannerUrl: "https://quotefancy.com/media/wallpaper/3840x2160/18846-Anonymous-Quote-Work-hard-in-silence-let-your-success-be-your.jpg",
-    website: "https://google.com",
+    website: "https://figurefrenzy.vercel.app/",
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },
