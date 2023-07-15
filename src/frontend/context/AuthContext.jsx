@@ -89,7 +89,11 @@ export const AuthContextProvider = ({ children }) => {
                 password: ""
             })
             toast.success("Logged in Successfully")
-            setIsLoggedIn(false);
+
+            setTimeout(() => {
+                setIsLoggedIn(false);
+            }, 1000);
+
 
 
         } catch (e) {

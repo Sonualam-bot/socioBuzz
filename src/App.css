@@ -98,8 +98,8 @@ p {
     overflow: scroll;
     overflow-x: hidden;
     grid-area: middle;
-    border-left: 0px solid var(--primary-color);
-    border-right: 1px solid var(--primary-color);
+    border-left: none;
+    border-right: none;
     border-width: thin;
   }
 }

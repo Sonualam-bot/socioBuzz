@@ -97,6 +97,7 @@
   overflow-y: scroll;
   width: 700px;
   border-right: 1px solid var(--vacay-background);
+  border-left: 1px solid var(--vacay-background);
 }
 
 .suggeston_container {
