@@ -15,7 +15,7 @@ export const users = [
     bio: "Full Stack Developer",
     bookmarks: [],
     posts: [],
-    avatarUrl: "https://imgur.com/OM9rGTA",
+    avatarUrl: "https://avatars.githubusercontent.com/u/61339832?v=4",
     bannerUrl: "https://quotefancy.com/media/wallpaper/3840x2160/18846-Anonymous-Quote-Work-hard-in-silence-let-your-success-be-your.jpg",
     website: "https://figurefrenzy.vercel.app/",
     createdAt: formatDate(),
