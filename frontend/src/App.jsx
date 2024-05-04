@@ -7,6 +7,7 @@ import ProfilePage from "./pages/profile/ProfilePage";
 
 import Sidebar from "./components/common/Sidebar";
 import RightPanel from "./components/common/RightPanel";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </Routes>
       {/* common for all screens */}
       <RightPanel />
+      <Toaster />
     </div>
   );
 }
