@@ -14,14 +14,15 @@ dotenv.config();
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLODINDAY_API_KEY,
-  api_secret: process.env.CLODINDAY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json()); //to parse req body
+app.use(express.json({ limit: "5mb" })); //to parse req body
+//limit shouldn't be too high to prevent DoS (Denial of Service)
 app.use(express.urlencoded({ extended: true })); // to parse form data
 
 app.use(cookieParser());
