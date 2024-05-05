@@ -88,20 +88,27 @@ export const commentOnPost = async (req, res) => {
       });
     }
 
-    const post = await Post.findById(postId);
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        error: "User not found",
+      });
+    }
 
-    if (!post) {
+    const commentedPost = await Post.findById(postId).populate("comments.user");
+
+    if (!commentedPost) {
       return res.status(404).json({
         error: "Post not found",
       });
     }
 
-    const comment = { user: userId, text };
+    const comment = { user, text };
 
-    post.comments.push(comment);
-    await post.save();
+    commentedPost.comments.push(comment);
+    await commentedPost.save();
 
-    res.status(200).json(post);
+    res.status(200).json(commentedPost);
   } catch (error) {
     console.log("Error in commentOnPost: ", error);
     res.status(500).json({ error: "Internal server error" });
