@@ -29,10 +29,6 @@ app.use(express.urlencoded({ extended: true })); // to parse form data
 
 app.use(cookieParser());
 
-// app.get("/", (req, res) => {
-//   res.send("Welcome to Twitter Api");
-// });
-
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/post", postRoutes);
