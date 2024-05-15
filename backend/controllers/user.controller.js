@@ -11,10 +11,10 @@ export const getUserProfile = async (req, res) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json(user);
+    return res.status(200).json(user);
   } catch (error) {
     console.log("Error in getUserProfile: ", error.message);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 };
 
@@ -58,11 +58,11 @@ export const followUnfollowUser = async (req, res) => {
 
       await newNotification.save();
 
-      res.status(200).json({ message: "User followed successfully" });
+      return res.status(200).json({ message: "User followed successfully" });
     }
   } catch (error) {
     console.log("Error in followUnfollowUser: ", error.message);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 };
 
@@ -87,10 +87,10 @@ export const getSuggestedUsers = async (req, res) => {
 
     suggestedUsers.forEach((user) => (user.password = null));
 
-    res.status(200).json(suggestedUsers);
+    return res.status(200).json(suggestedUsers);
   } catch (error) {
     console.log("Error in getSuggestedUsers: ", error.message);
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message });
   }
 };
 
@@ -170,7 +170,7 @@ export const updateUser = async (req, res) => {
     return res.status(200).json(user);
   } catch (error) {
     console.log("Error in update user: ", error.message);
-    res.status(500).json({
+    return res.status(500).json({
       error: error.message,
     });
   }

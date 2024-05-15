@@ -34,10 +34,10 @@ export const createPost = async (req, res) => {
     });
 
     await newPost.save();
-    res.status(201).json(newPost);
+    return res.status(201).json(newPost);
   } catch (error) {
     console.log("Error in createPost controller: ", error.message);
-    res.status(500).json({
+    return res.status(500).json({
       error: "Internal server error",
     });
   }
@@ -65,12 +65,12 @@ export const deletePost = async (req, res) => {
 
     await Post.findByIdAndDelete(req.params.id);
 
-    res.status(200).json({
+    return res.status(200).json({
       message: "Post deleted successfully",
     });
   } catch (error) {
     console.log("Error in delete Post controller: ", error.message);
-    res.status(500).json({
+    return res.status(500).json({
       error: "Internal Server Error",
     });
   }
@@ -108,10 +108,10 @@ export const commentOnPost = async (req, res) => {
     commentedPost.comments.push(comment);
     await commentedPost.save();
 
-    res.status(200).json(commentedPost);
+    return res.status(200).json(commentedPost);
   } catch (error) {
     console.log("Error in commentOnPost: ", error);
-    res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -153,11 +153,11 @@ export const likeUnlikePost = async (req, res) => {
 
       const updatedLikes = post.likes;
 
-      res.status(200).json(updatedLikes);
+      return res.status(200).json(updatedLikes);
     }
   } catch (error) {
     console.log("Error in likeUnlikePost controller: ", error);
-    res.status(500).json({
+    return res.status(500).json({
       error: "Internal server error",
     });
   }
@@ -180,10 +180,10 @@ export const getAllPosts = async (req, res) => {
       return res.status(200).json([]);
     }
 
-    res.status(200).json(posts);
+    return res.status(200).json(posts);
   } catch (error) {
     console.log("Error in getAllPosts controller: ", error.message);
-    res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -208,10 +208,10 @@ export const getLikedPosts = async (req, res) => {
         select: "-password",
       });
 
-    res.status(200).json(likedPosts);
+    return res.status(200).json(likedPosts);
   } catch (error) {
     console.log("Error in getLikedPosts controller: ", error.message);
-    res.status(500).json({
+    return res.status(500).json({
       error: "Internal server error",
     });
   }
@@ -240,10 +240,10 @@ export const getFollowingPosts = async (req, res) => {
         select: "-password",
       });
 
-    res.status(200).json(feedPosts);
+    return res.status(200).json(feedPosts);
   } catch (error) {
     console.log("Error in getFollowingPosts controller: ", error.message);
-    res.status(500).json({
+    return res.status(500).json({
       error: "Internal server error",
     });
   }
@@ -269,6 +269,11 @@ export const getUserPosts = async (req, res) => {
         select: "-password",
       });
 
-    res.status(200).json(post);
-  } catch (error) {}
+    return res.status(200).json(post);
+  } catch (error) {
+    console.log("Error in getUserPosts controller: ", error.message);
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
 };
