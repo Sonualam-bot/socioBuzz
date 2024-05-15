@@ -26,11 +26,7 @@ const __dirname = path.resolve();
 
 app.use(
   cors({
-    origin: [
-      "https://twitter-x-clone-mralam.onrender.com",
-      "http://localhost:5000",
-      "http://localhost:3000",
-    ],
+    origin: "*",
     credentials: true,
   })
 );
