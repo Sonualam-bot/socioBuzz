@@ -51,6 +51,39 @@ const LoginPage = () => {
     },
   });
 
+  const { mutate: guestMutation, isPending: isGuestLoginPending } = useMutation(
+    {
+      mutationFn: async () => {
+        try {
+          const res = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username: "mrthor", password: "123456" }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            throw new Error(data.error || "Something went wrong");
+          }
+        } catch (error) {
+          throw new Error(error);
+        }
+      },
+
+      onSuccess: () => {
+        // toast.success("Login Successfull");
+        //refetch the auth user
+        queryClient.invalidateQueries({ queryKey: ["authUser"] });
+      },
+      onError: () => {
+        toast.error("Something went wrong");
+      },
+    }
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -97,11 +130,21 @@ const LoginPage = () => {
               value={formData.password}
             />
           </label>
-          <button className="btn rounded-full btn-primary text-white">
+          <button
+            type="submit"
+            className="btn rounded-full btn-primary text-white"
+          >
             {isPending ? "Loading..." : "Login"}
           </button>
+
           {isError && <p className="text-red-500">{error.message}</p>}
         </form>
+        <button
+          onClick={guestMutation}
+          className="btn rounded-full btn-primary text-white mt-3 w-[250px] "
+        >
+          {isGuestLoginPending ? "Logging..." : "Guest Login"}
+        </button>
         <div className="flex flex-col gap-2 mt-4">
           <p className="text-white text-lg">{"Don't"} have an account?</p>
           <Link to="/signup">
